@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "R %in% c(`Business`)"
+title = "Blog - Sunita Kenner"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
@@ -19,9 +19,9 @@ enableEmoji = true
 
   author               = "Sunita Kenner"
   # Sets the meta tag description
-  description          = "Cup of R/Python in Business"
+  description          = "Cup of R & Python in Biz"
   # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = "R %in% C(Business)"
+  navbarTitle          = "R %in% c(Business)"
   # Sets where "View More Posts" links
   viewMorePostLink     = "/blog/"
 
@@ -93,9 +93,9 @@ enableEmoji = true
   # These are optional params related to the sidebar. They are recommended, but not
   # required for proper functionality. HTML is supported within the params.
 [params.intro]
-  header    = "Cup of R/Python in Business"
+  header    = "S Kenner"
 
-  paragraph = "vars_at(R, Python) %in% c(Business Solutions)"
+  paragraph = "vars(R, Python) %in% c(Business Solutions)"
 
   #about     = "Business/Data Scientist <- c(wrangle, explore, model, communicate)
 
@@ -108,7 +108,7 @@ enableEmoji = true
     circle    = true
     # Sets Image to be Future Imperfect's hexagon
     imperfect = false
-    width     = "150"
+    width     = "150px"
     alt       = "Intro picture"
 
 [params.postAmount]
@@ -138,11 +138,11 @@ enableEmoji = true
   identifier = "fa fa-newspaper-o"
   weight = 3
 
-[[menu.main]]
-  name = "Itemized"
-  url = "/itemized/"
-  identifier = "fa fa-list"
-  weight = 4
+#[[menu.main]]
+ # name = "Itemized"
+  #url = "/itemized/"
+  #identifier = "fa fa-list"
+  #weight = 4
 
 [[menu.main]]
   name = "Categories"
@@ -161,7 +161,7 @@ enableEmoji = true
 # and socialAppearAtBottom.
 [social]
   # Coding Communities
-  github           = "sunitgk/sunitakenner"
+  github           = "sunitgk"
   #gitlab           = ""
   #stackoverflow    = "" # User Number
   #bitbucket        = ""
