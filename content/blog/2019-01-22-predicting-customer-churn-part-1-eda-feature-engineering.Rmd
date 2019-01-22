@@ -1,0 +1,218 @@
+---
+title: 'Predicting Customer Churn, Part 1: EDA, Feature Engineering'
+author: Sunita Kenner
+date: '2019-01-22'
+slug: predicting-customer-churn-part-1-eda-feature-engineering
+categories:
+  - Product churn
+  - feature engineering
+tags:
+  - customer segmentation
+  - rfm
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+type: post
+---
+
+This is Part 1 of a 2 Part series of predicting Customer Churn.  The first step to predicting customer churn for a product "X" is understanding who these customers are; specifically, what purchase behavior patterns tell their story? Quantifying customer purchase behavior patterns, is one of the approaches that answers the question, and [feature engineering](https://heartbeat.fritz.ai/introduction-to-automated-feature-engineering-using-deep-feature-synthesis-dfs-3feb69a7c00b) produces the quantification parameters to output 2 useful products:
+
+1.  Product 1: Quantitative Segmentation of our customers:  Who are they? 
+2.  Product 2: Context-based Features to feed our predictive model: Which customers based on those features are likely to churn?
+
+The output of the Analysis is available as a shiny app here:
+
+### 2 notable feature engineering quotes. 
+
+> Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data 
+  -- Dr. Jason Brownlee
+  
+> Coming up with features is difficult, time-consuming, and requires expert knowledge. ‘Applied machine learning’ is basically feature engineering
+  — Andrew Ng
+
+```{r, echo = FALSE, message = FALSE, error = FALSE, warning=FALSE}
+# packages <- c(
+#    "h2o",        # High performance machine learning
+#   "lime",       # Explaining black-box models
+#   "recipes",    # Creating ML preprocessing recipes
+#   "tidyverse",  # Set of pkgs for data science: dplyr, ggplot2, purrr, tidyr, ...
+#   "tidyquant",  # Financial time series pkg - Used for theme_tq ggplot2 theme
+#   "glue",       # Pasting text
+#   "cowplot",    # Handling multiple ggplots
+#   "GGally",     # Data understanding - visualizations
+#   "skimr",      # Data understanding - summary information
+#   "fs",         # Working with the file system - directory structure
+#   "readxl",     # Reading excel files
+#   "writexl",    # Writing to excel files
+#   "forecast",   #Forecasting package by R. Hyndmann
+#   "dygraphs",
+#   "astsa",
+#   "tseries",
+#   "lubridate",
+#   "highcharter",
+#   "DT",
+#   "gmodels",
+#   "sqldf",
+#   "rsample",
+#   "yardstick",
+#   "corrr"
+#   )
+# 
+# install.packages(packages)
+
+library(h2o)
+library(recipes)
+library(readxl)
+library(tidyverse)
+library(tidyquant)
+library(stringr)
+library(forcats)
+library(cowplot)
+library(fs)
+library(glue)
+library(lime)
+library(rsample)
+library(yardstick)
+library(corrr)
+library(skimr)
+library(GGally)
+library(RColorBrewer)
+
+devtools::install_github("jbkunst/highcharter")
+library(highcharter)
+library(zoo)
+library(lubridate)
+
+```
+
+  
+```{r, echo = FALSE}
+
+path_train <- "~/Documents/sunitakenner/Product_Data/blog_data_churn.rds"
+path_to_file <- "~/Documents/sunitakenner/Product_Data/blog_raw_data_Jan19.rds"
+blog_raw_data <- readRDS(path_to_file)
+#path_Models <- "~/Documents/2018_TeamSync_Insight/Teamsync_Module/04_Modeling/h2o_Models/"
+RFM_segment_data <- readRDS(path_train)
+#How do we change data observations to data with context? 
+```
+
+
+### Part 1: Feature Engineering
+
+Key Objective: Simplicity and Maintainability. Build Features that can be understood by the targeted human audience and relevant to the predictive model. 
+
+1.  Start with feature selection to extract a relevant subset of the raw dataset. While correlation or other feature selection methods can be applied for feature selection, my first filter to selecting features are the Subject Matter Experts in the organisation(e.g. Product Owners/Sales). 
+
+Let's take a look at the example of a relevant subset of raw data using skimr.
+
+```{r, message = FALSE, error = FALSE}
+skim(blog_raw_data)
+
+```
+
+2. Transform date-time variables to date-time with context features. For example, the date-time variable `Cal.Month` can be used to engineer the month a customer purchased the product, the monthly cohort/s those particular customers belong to, and the tenure of the customers. Businesses usually look to gaining transaction/churn insights on a monthly, quarterly, yearly, and `Fiscal year`(Fiscal Year in this example starts in July), so we can feature engineer those as well. 
+
+```{r}
+Feature_engineered_set1 <- blog_raw_data %>% 
+  mutate(quarter_year = as.yearqtr(Cal.Month),
+         Year = year(Cal.Month),
+         FY = (year(Cal.Month) + (month(Cal.Month) >=7)),
+         Month_Purchased = month(Cal.Month),
+         Monthly_cohort = month.abb[Month_Purchased],
+         Month_Churn = month.abb[month(`Maint End Date`)]
+        )
+
+glimpse(Feature_engineered_set1)
+```
+
+3.  Our target is to predict customers who will churn.  The dataset does not come preloaded with churn information.  So how do we determine if a customer has churned?  In this particular example, a customer churns if they do not renew their service annually, or if they have passed the `Maint End Date` variable without renewing. So, we engineer the churn feature setting a churn_check_flag, and using the max function on the variable `Maint End Date`. If a `Maint End Date` is not available, engineer feature/features that will help determine which customers have churned. For example, if the customer has not purchased more than once in 365 days, then the customer has churned.  
+
+```{r, eval = F}
+#set churn_check_flag
+churn_check_flag <- as.POSIXct("2018-09-30")
+data_w_churn <- Feature_engineered_set1 %>% 
+  group_by(`Cust No`) %>% 
+  mutate(max = if_else(`Maint End Date` == max(`Maint End Date`), `Maint End Date`, as.Date.POSIXct(NA))) %>% 
+  drop_na() %>% 
+  mutate(churn = if_else(max > churn_check_flag, "No", "Yes"))
+
+```
+
+4. Numeric: Engineer the frequency of purchase/s, the average amount spent per purchase, and when the customer first purchased calculated in days, or months, or year depending on what is required. These 3 features are also known as Recency, Frequency, and Monetary and used frequently in marketing to determine customer purchase behavior pattern. This requires date-time numeric calculation of `Cal.Month` and `time1` provided. There's the date-time feature that can be used to engineer to count the number of days the customer has been with us.  
+
+```{r, eval = F}
+
+feature_engineered_data_set2 <- feature_engineered_data_set1 %>% 
+  group_by(`Cust No`) %>% 
+  mutate( tenure_days = round(as.numeric(difftime(time1 = time1,
+                             time2 = Cal.Month,
+                             units = "days"))),
+         recency = min(tenure_days), 
+         first_purchase = max(tenure_days), 
+         frequency = n(), 
+         Monetary = round(mean(Total_Amt),0)
+  )
+
+```
+
+<!-- Biggest gains come from being smart about representing data, rather than some complex algorithm.  The CRISP data mining process has 2 stages dedicated solely to data understanding and prep. You are providing data with context.  -->
+
+5.  Categorical with context: When a user selects an additional feature, the feature Xtra column gets a yes, if not a "no". This is manual one-hot encoding. 
+
+6.  Feature Crosses: Combining 2 or more categorical attributes into a single one.
+
+```{r, eval = FALSE}
+divider_segment <- median(feature_engineered_data_set2$monetary)
+
+Churn_data_w_segments <- feature_engineered_data_set2%>% 
+  group_by(`Cust No`) %>%
+  mutate( segment = case_when(
+          churn == "No" & between(first_purchase, 730, max(first_purchase)) ~ "2+ Years Active",
+          churn == "No" & between(first_purchase, 365, 729) ~ "1+ Years Active",
+          churn == "No" & first_purchase < 365 ~ "New Active",
+          churn == "Yes" ~ "Inactive"
+         ),
+         
+         segment_monetary = case_when(
+           segment == "2+ Years Active" & Monetary <= divider_segment ~ "2+ Years Active low Value",
+           segment == "2+ Years Active" & Monetary > divider_segment ~ "2+ Years Active high Value",
+           segment == "1+ Years Active" & Monetary <= divider_segment ~ "1+ Year Active low Value",
+           segment == "1+ Years Active" & Monetary > divider_segment ~ "1+ Year Active high Value",
+           segment == "New Active" & Monetary <= divider_segment ~ "New Active low Value",
+           segment == "New Active" & Monetary > divider_segment ~ "New Active high Value",
+           segment == "Inactive" & Monetary <= divider_segment ~ "Inactive low Value",
+           segment == "Inactive" & Monetary > divider_segment ~ "Inactive high Value"
+         )) %>% 
+  select(`Cust No`, Month, CustNo,`Maint End Date`, max, churn, recency, first_purchase, Monetary, frequency, segment, segment_monetary, everything())
+
+```
+
+
+7.  Binning/Bucketing: Bin the segments by recency and frequency to engineer segmented frequency and segmented recency:
+
+```{r, eval = F}
+
+# Bin the segmented by recency
+
+seg.rec_class <- c("0-6 mos", "7-12 mos", "13-18 mos", "19-24 mos", "2+ Years")
+
+#Need to remove customer ID as it will try to mutate per
+RFM_Churn_data_w_segments <- Churn_data_w_segments[,-1] %>% 
+  mutate(seg.freq = ifelse(frequency == 1, "1", 
+                          ifelse(frequency == 2, "2",
+                          ifelse(frequency == 3, "3",
+                          ifelse(frequency == 4, "4",
+                          ifelse(frequency == 5, "5", '5+'
+                        )))))) %>% 
+   mutate(seg.rec = ifelse(between(recency, 0, 180), seg.rec_class[1],
+                          ifelse(between(recency, 181, 365), seg.rec_class[2],
+                          ifelse(between(recency, 366, 546), seg.rec_class[3],
+                          ifelse(between(recency, 547, 730), seg.rec_class[4], seg.rec_class[5]
+                          )))),
+          seg.rec = fct_relevel(seg.rec, seg.rec_class))%>%
+    mutate_if(is.character, as.factor)
+
+```
+

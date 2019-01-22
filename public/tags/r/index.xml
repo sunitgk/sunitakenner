@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>r on R %in% c(`Business`)</title>
+    <link>/tags/r/</link>
+    <description>Recent content in r on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prophet vs Hyndman’s Forecast Package</title>
+      <link>/blog/forecasting-w-prophet-vs-hyndman-s-forecast-package/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/forecasting-w-prophet-vs-hyndman-s-forecast-package/</guid>
+      <description>Having used Rob Hyndman’s forecasting package in R, I decided to give Facebook’s Prophet package a spin and do a comparison of the results.
+##Forecasts using Prophet
+The Time-series data sets: - Daily data set
+## y ds ## 1 8 2016-05-10 ## 2 10 2016-05-11 ## 3 3 2016-05-11 ## 4 7 2016-05-12 ## 5 3 2016-05-12 ## 6 3 2016-05-12 Prophet provides the ability to forecast projected growth based on market intel, by specifying the carrying capacity ‘cap’; the forecast should reach the maximum/saturation at the set ‘cap’.</description>
+    </item>
+    
+    <item>
+      <title>Teaching R to 5th-Middle Graders</title>
+      <link>/blog/teaching-r-to-5th-middle-graders/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/teaching-r-to-5th-middle-graders/</guid>
+      <description>Teaching R to 5th graders-Middle Schoolers during the weekend has been both enlightening and humbling.
+Enlightening because kids understand data with context far better than adults; perhaps because they are not encumbered by the Big Data noise and always prefer visualization over text. I’ve learned to work within the limits of their attention span (so lots of breaks) and interest, cultivating a continuous learning environment versus a competitive one, a “We” versus an “I” approach, and “humbleness” in place “arrogance”.</description>
+    </item>
+    
+    <item>
+      <title>Net Promoter Score: Using Ggvis/NPS Package in R</title>
+      <link>/blog/net-promoter-score-using-ggvis-nps-package-in-r/</link>
+      <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/net-promoter-score-using-ggvis-nps-package-in-r/</guid>
+      <description>“How likely are you to recommend”Company A&amp;quot; to a friend?&amp;quot; is an Net Promoter Score (NPS) question (Likelihood to Recommend/LTR) which categorizes the responses(voice of the customers) under 3 camps:
+  Customers LTR_Score    Promoters 9 or 10  Passives 7 or 8  Detractors 0 to 6    A customer loyalty metric introduced by Fred Reicheld, Founder of Bain &amp;amp; Company’s Loyalty Practice, the Net Promoter Score (NPS) is used at my work as a compass by business decision makers to understand if NPS provides an insight to what drives customers to repeat purchase, referrals, and resistance to competitor offerings.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/blog/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,905 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/"
+        },
+        "articleSection" : "blog",
+        "name" : "Product Insights Through Trelliscope",
+        "headline" : "Product Insights Through Trelliscope",
+        "description" : "Note: The trelliscope plot displays with blogdown would not have been possible without Yihui Xie’s lightning fast help. Not only did he implement the fix (in an afternoon), but documented/provided 2 options to fixing the trelliscope display issue. Thank you so much Yihui.
+One of the impressive presentations at Jan 2017 RStudio Conference was Ryan Hafen’s trelliscopejs R package in action: Visualization in the Tidyverse. “TrelliscopeJS is a framework for creative interactive displays of small multiples”, and this is incredibly powerful when providing insights on product lines to decision makers.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2017",
+        "datePublished": "2017-06-30 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2017-06-30 00:00:00 &#43;0000 UTC",
+        "url" : "/blog/product-insights-through-trelliscope/",
+        "wordCount" : "684",
+        "keywords" : [ "Trelliscope","r","multiple displays","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Product Insights Through Trelliscope</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.53" />
+        
+
+
+        
+            <meta name="author" content="Sunita Kenner">
+        
+        
+            
+                <meta name="description" content="Cup of R/Python in Business">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Product Insights Through Trelliscope"/>
+<meta name="twitter:description" content="Note: The trelliscope plot displays with blogdown would not have been possible without Yihui Xie’s lightning fast help. Not only did he implement the fix (in an afternoon), but documented/provided 2 options to fixing the trelliscope display issue. Thank you so much Yihui.
+One of the impressive presentations at Jan 2017 RStudio Conference was Ryan Hafen’s trelliscopejs R package in action: Visualization in the Tidyverse. “TrelliscopeJS is a framework for creative interactive displays of small multiples”, and this is incredibly powerful when providing insights on product lines to decision makers."/>
+
+        <meta property="og:title" content="Product Insights Through Trelliscope" />
+<meta property="og:description" content="Note: The trelliscope plot displays with blogdown would not have been possible without Yihui Xie’s lightning fast help. Not only did he implement the fix (in an afternoon), but documented/provided 2 options to fixing the trelliscope display issue. Thank you so much Yihui.
+One of the impressive presentations at Jan 2017 RStudio Conference was Ryan Hafen’s trelliscopejs R package in action: Visualization in the Tidyverse. “TrelliscopeJS is a framework for creative interactive displays of small multiples”, and this is incredibly powerful when providing insights on product lines to decision makers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/product-insights-through-trelliscope/" /><meta property="article:published_time" content="2017-06-30T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-06-30T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Product Insights Through Trelliscope">
+<meta itemprop="description" content="Note: The trelliscope plot displays with blogdown would not have been possible without Yihui Xie’s lightning fast help. Not only did he implement the fix (in an afternoon), but documented/provided 2 options to fixing the trelliscope display issue. Thank you so much Yihui.
+One of the impressive presentations at Jan 2017 RStudio Conference was Ryan Hafen’s trelliscopejs R package in action: Visualization in the Tidyverse. “TrelliscopeJS is a framework for creative interactive displays of small multiples”, and this is incredibly powerful when providing insights on product lines to decision makers.">
+
+
+<meta itemprop="datePublished" content="2017-06-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-06-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="684">
+
+
+
+<meta itemprop="keywords" content="Trelliscope,r,multiple displays," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="../../css/main.css">
+            <link rel="stylesheet" href="../../css/add-on.css">
+            <link rel="stylesheet" href="../../css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/hybrid.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="../../">R %in% C(Business)</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="../../">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../itemized/">
+                            <i class="fa fa-list">&nbsp;</i>Itemized
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="../../">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../itemized/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Itemized
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn, Part 1: EDA, Feature Engineering</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-01-22'>
+                                    January 22, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/sales-insights-using-shiny-modules-highcharter/">Sales Insights using Shiny Modules &amp; Highcharter</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-03-05'>
+                                    March 5, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-11-15'>
+                                    November 15, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/product-insights-through-trelliscope/">Product Insights Through Trelliscope</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-06-30'>
+                                    June 30, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/pricing-raise-lower-or-stay/">Pricing: Raise, Lower or Stay</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-06-01'>
+                                    June 1, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fproduct-insights-through-trelliscope%2f&amp;text=Product%20Insights%20Through%20Trelliscope&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fproduct-insights-through-trelliscope%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fproduct-insights-through-trelliscope%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fproduct-insights-through-trelliscope%2f&amp;title=Product%20Insights%20Through%20Trelliscope" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fproduct-insights-through-trelliscope%2f&amp;title=Product%20Insights%20Through%20Trelliscope" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fproduct-insights-through-trelliscope%2f&amp;title=Product%20Insights%20Through%20Trelliscope" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fproduct-insights-through-trelliscope%2f&amp;description=Product%20Insights%20Through%20Trelliscope" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Sunita%20Kenner&amp;body=%2fblog%2fproduct-insights-through-trelliscope%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="../../blog/product-insights-through-trelliscope/">Product Insights Through Trelliscope</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2017-06-30'>
+            June 30, 2017</time>
+        <span class="author">Sunita Kenner</span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    
+<script src="../../rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="../../rmarkdown-libs/trelliscopejs_widget/trelliscope.min.js"></script>
+<script src="../../rmarkdown-libs/trelliscopejs_widget-binding/trelliscopejs_widget.js"></script>
+
+
+<p><strong>Note: The trelliscope plot displays with blogdown would not have been possible without <a href="https://yihui.name">Yihui Xie’s</a> lightning fast help. Not only did he implement the fix (in an afternoon), but <a href="https://bookdown.org/yihui/blogdown/dep-path.html">documented/provided 2 options</a> to fixing the trelliscope display issue. Thank you so much Yihui.</strong></p>
+<p>One of the impressive presentations at <a href="https://www.rstudio.com/conference/">Jan 2017 RStudio Conference</a> was Ryan Hafen’s <a href="http://slides.com/hafen/trelliscopejs#/">trelliscopejs R package in action: Visualization in the Tidyverse</a>. “TrelliscopeJS is a framework for creative interactive displays of small multiples”, and this is incredibly powerful when providing insights on product lines to decision makers.</p>
+<p>User will be able to use the <code>Sort</code>, <code>Filter</code>, <code>Labels</code>, and <code>Grid</code> tabs to gain further insights from the data. A powerful way to dig deeper into data without having to produce several seperate plots. The display can be viewed full screen using the toggle @ right-hand corner.</p>
+<p>Using <code>nest()</code> in <code>tidyverse</code>, <code>rbokeh</code> and <code>trelliscope</code></p>
+<pre class="r"><code>Trellis_Data1 &lt;- Product_df_1 %&gt;%
+  group_by(Products, Month, region) %&gt;% 
+  mutate(Unit.Cost = mean(Unit.Cost))
+
+Trellis_Data2 &lt;- Trellis_Data1 %&gt;%
+  group_by(Products, region) %&gt;%
+  mutate(industry_most = names(tail(sort(table(industry)), 1)))
+
+ Trell_plot &lt;- Trellis_Data2 %&gt;%
+  dplyr::group_by(Products, Month, region, industry_most) %&gt;%
+  dplyr::summarise(Qty = sum(Qty), Amt = sum(Amount), ASP = Amt/Qty) %&gt;%
+  group_by(Products, region) %&gt;%
+  nest() %&gt;%
+  mutate(panel = map_plot(data,
+    ~ figure(toolbar = NULL, xlim = c(4.5, 12.5), ylim = c(21.5, 101)) %&gt;%
+      ly_points(Month, ASP, hover = .x[1:3], data = .x)
+  ))
+
+Trell_plot %&gt;% trelliscope(name = &quot;ASP_Month&quot;, nrow =2, ncol = 4, width = 500,  path = blogdown::dep_path())</code></pre>
+<div id="htmlwidget-1" style="width:900px;height:550px;" class="trelliscopejs_widget html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"id":"d9b142a7","config_info":"'/blog/2017-06-30-product-insights-through-trelliscope_files/figure-html/unnamed-chunk-3/appfiles/config.jsonp'","self_contained":false,"latest_display":{"name":"ASP_Month","group":"common"},"spa":false,"in_knitr":true,"in_notebook":false},"evals":[],"jsHooks":[]}</script>
+<p>The one variable I was not seeing on the display to sort and filter by was <code>industry</code>. Please see note from Ryan Hafen for an explanation as to why the variable cannot be used for display, and what can be done to address it.</p>
+<pre class="r"><code>Trellis_Data1 %&gt;%
+  group_by(Products, region) %&gt;%
+  summarise(uniq_industry = length(unique(industry)))</code></pre>
+<p>###Note from Ryan Hafen</p>
+<blockquote>
+<p>To add additional variables to a display to sort and filter on, those variables just need to be present in the data. If it’s a numeric variable, a summary statistic (mean) will be computed. If it’s categorical, like <code>industry</code>, then the variable can only be included if it is constant within each panel (each panel can have a set of scalar metrics to sort and filter on - these cannot be vectors). The <code>industry</code> variable cannot be used in the above display because it is not unique within each combination of <code>Products</code> and <code>region</code>. You could create a new variable that is the most prominent industry for each <code>Products</code> / <code>region</code> combination and then it would be automatically included.</p>
+</blockquote>
+<pre class="r"><code>Trellis_Data2 &lt;- Trellis_Data1 %&gt;%
+  group_by(Products, region) %&gt;%
+  mutate(industry_most = names(tail(sort(table(industry)), 1)))
+
+Trellis_Data2</code></pre>
+<pre><code>## # A tibble: 888 x 10
+## # Groups:   Products, region [9]
+##    Products Unit.Cost Amount   Qty Ship.Country       Year Month region   
+##    &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    
+##  1 ProdA         94.9  665       7 United States of…  2016  5.00 &quot; North …
+##  2 ProdA         94.9   96.0     1 United States of…  2016  5.00 &quot; North …
+##  3 ProdA         94.9  655       7 United States of…  2016  5.00 &quot; North …
+##  4 ProdA         93.9   93.9     1 Australia          2016  5.00 &quot; Austra…
+##  5 ProdA         94.9   93.9     1 Switzerland        2016  5.00 &quot; EMEA &quot; 
+##  6 ProdA         94.9   96.0     1 United Kingdom     2016  5.00 &quot; EMEA &quot; 
+##  7 ProdC         96.0  288       3 Germany            2016  5.00 &quot; EMEA &quot; 
+##  8 ProdC         96.0  192       2 United States of…  2016  5.00 &quot; North …
+##  9 ProdC         96.0  192       2 United Kingdom     2016  5.00 &quot; EMEA &quot; 
+## 10 ProdC         96.0  192       2 Ireland            2016  5.00 &quot; EMEA &quot; 
+## # ... with 878 more rows, and 2 more variables: industry &lt;fct&gt;,
+## #   industry_most &lt;chr&gt;</code></pre>
+<p>Using <code>qplot</code> and <code>facet_treplliscope</code></p>
+<pre class="r"><code>#Does not work because of ggplot2
+install.packages(&quot;ggplot2&quot;)
+library(ggplot2)
+qplot(Month, Unit.Cost, data = Trellis_Data2) + 
+  xlim(4.5, 12.5) + ylim(21.5, 101) + 
+facet_trelliscope(~ Products + region, nrow = 2, ncol = 4, width = 500, path = blogdown::dep_path(&quot;rmarkdown_files/Unitcost_vs_Month_gg&quot;))</code></pre>
+<p>There will be future posts on gaining powerful multiple insights from displays of small multiples.</p>
+<p>Thanks again for all your help <a href="https://yihui.name">Yihui</a> &amp; <a href="https://hafen.github.io/trelliscopejs/#trelliscope">Ryan</a>. Appreciate the time and effort you’ve spent in helping me resolve some of the issues I encountered while using the package.<br />
+<a href="http://ryanhafen.com/blog/trelliscopejs">More trelliscopejs</a>.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="../../categories/r">R</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../categories/product-insights">Product Insights</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../categories/visualizations">Visualizations</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="../../tags/trelliscope">Trelliscope</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../tags/r">r</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../tags/multiple-displays">multiple displays</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "skenner-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="../../blog/pricing-raise-lower-or-stay/"
+                class="button big previous">Pricing: Raise, Lower or Stay</a></li>
+    
+
+    
+        <li><a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/"
+                class="button big next">From Powerpoint to ShinyDashboards &amp; Highcharter</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='../../'><img src="../../img/main/logo2.jpg" class="intro-circle" width="150" alt="Intro picture" /></a>
+      
+    
+    
+      <header>
+        <h2>Cup of R/Python in Business</h2>
+        <p>vars_at(R, Python) %in% c(Business Solutions)</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="../../index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/sunitgk/sunitakenner" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/sunita-tashi-kenner-41321810" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn, Part 1: EDA, Feature Engineering</a>
+              </h3>
+              
+              <time class="published" datetime='2019-01-22'>
+                January 22, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/sales-insights-using-shiny-modules-highcharter/">Sales Insights using Shiny Modules &amp; Highcharter</a>
+              </h3>
+              
+              <time class="published" datetime='2018-03-05'>
+                March 5, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a>
+              </h3>
+              
+              <time class="published" datetime='2017-11-15'>
+                November 15, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/product-insights-through-trelliscope/">Product Insights Through Trelliscope</a>
+              </h3>
+              
+              <time class="published" datetime='2017-06-30'>
+                June 30, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/pricing-raise-lower-or-stay/">Pricing: Raise, Lower or Stay</a>
+              </h3>
+              
+              <time class="published" datetime='2017-06-01'>
+                June 1, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          Sunita Kenner
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="../../js/util.js"></script>
+      <script src="../../js/main.js"></script>
+      <script src="../../js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

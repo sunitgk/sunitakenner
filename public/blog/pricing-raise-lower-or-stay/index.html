@@ -1,0 +1,953 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/"
+        },
+        "articleSection" : "blog",
+        "name" : "Pricing: Raise, Lower or Stay",
+        "headline" : "Pricing: Raise, Lower or Stay",
+        "description" : "“We would like to increase our revenue, so can we raise the price of Product”X&quot;&quot;? A question I’m often asked during Financial &amp; Forecasting Fiscal Year Planning cycles. Using pricing as one of the levers to maximize revenue or profit margins is one of the challenging decisions businesses have to make. For offerings already in the market, how does a business determine if the pricing is right or optimal without the guesswork or intuition?",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2017",
+        "datePublished": "2017-06-01 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2017-06-01 00:00:00 &#43;0000 UTC",
+        "url" : "/blog/pricing-raise-lower-or-stay/",
+        "wordCount" : "1018",
+        "keywords" : [ "Price Elasticity","Linear Regression","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Pricing: Raise, Lower or Stay</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.53" />
+        
+
+
+        
+            <meta name="author" content="Sunita Kenner">
+        
+        
+            
+                <meta name="description" content="Cup of R/Python in Business">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pricing: Raise, Lower or Stay"/>
+<meta name="twitter:description" content="“We would like to increase our revenue, so can we raise the price of Product”X&quot;&quot;? A question I’m often asked during Financial &amp; Forecasting Fiscal Year Planning cycles. Using pricing as one of the levers to maximize revenue or profit margins is one of the challenging decisions businesses have to make. For offerings already in the market, how does a business determine if the pricing is right or optimal without the guesswork or intuition?"/>
+
+        <meta property="og:title" content="Pricing: Raise, Lower or Stay" />
+<meta property="og:description" content="“We would like to increase our revenue, so can we raise the price of Product”X&quot;&quot;? A question I’m often asked during Financial &amp; Forecasting Fiscal Year Planning cycles. Using pricing as one of the levers to maximize revenue or profit margins is one of the challenging decisions businesses have to make. For offerings already in the market, how does a business determine if the pricing is right or optimal without the guesswork or intuition?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/pricing-raise-lower-or-stay/" /><meta property="article:published_time" content="2017-06-01T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-06-01T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Pricing: Raise, Lower or Stay">
+<meta itemprop="description" content="“We would like to increase our revenue, so can we raise the price of Product”X&quot;&quot;? A question I’m often asked during Financial &amp; Forecasting Fiscal Year Planning cycles. Using pricing as one of the levers to maximize revenue or profit margins is one of the challenging decisions businesses have to make. For offerings already in the market, how does a business determine if the pricing is right or optimal without the guesswork or intuition?">
+
+
+<meta itemprop="datePublished" content="2017-06-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-06-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1018">
+
+
+
+<meta itemprop="keywords" content="Price Elasticity,Linear Regression," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="../../css/main.css">
+            <link rel="stylesheet" href="../../css/add-on.css">
+            <link rel="stylesheet" href="../../css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/hybrid.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="../../">R %in% C(Business)</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="../../">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../itemized/">
+                            <i class="fa fa-list">&nbsp;</i>Itemized
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="../../">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../itemized/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Itemized
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn, Part 1: EDA, Feature Engineering</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-01-22'>
+                                    January 22, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/sales-insights-using-shiny-modules-highcharter/">Sales Insights using Shiny Modules &amp; Highcharter</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-03-05'>
+                                    March 5, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-11-15'>
+                                    November 15, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/product-insights-through-trelliscope/">Product Insights Through Trelliscope</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-06-30'>
+                                    June 30, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/pricing-raise-lower-or-stay/">Pricing: Raise, Lower or Stay</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-06-01'>
+                                    June 1, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fpricing-raise-lower-or-stay%2f&amp;text=Pricing%3a%20Raise%2c%20Lower%20or%20Stay&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fpricing-raise-lower-or-stay%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fpricing-raise-lower-or-stay%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fpricing-raise-lower-or-stay%2f&amp;title=Pricing%3a%20Raise%2c%20Lower%20or%20Stay" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fpricing-raise-lower-or-stay%2f&amp;title=Pricing%3a%20Raise%2c%20Lower%20or%20Stay" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fpricing-raise-lower-or-stay%2f&amp;title=Pricing%3a%20Raise%2c%20Lower%20or%20Stay" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fpricing-raise-lower-or-stay%2f&amp;description=Pricing%3a%20Raise%2c%20Lower%20or%20Stay" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Sunita%20Kenner&amp;body=%2fblog%2fpricing-raise-lower-or-stay%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="../../blog/pricing-raise-lower-or-stay/">Pricing: Raise, Lower or Stay</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2017-06-01'>
+            June 1, 2017</time>
+        <span class="author">Sunita Kenner</span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    
+
+
+<p>“We would like to increase our revenue, so can we raise the price of Product”X&quot;&quot;? A question I’m often asked during Financial &amp; Forecasting Fiscal Year Planning cycles. Using pricing as one of the levers to maximize revenue or profit margins is one of the challenging decisions businesses have to make. For offerings already in the market, how does a business determine if the pricing is right or optimal without the guesswork or intuition?</p>
+<p>I usually start with gathering feedback on the product in question from Sales/Product Managers/Owners. Merging their feedback + my knowledge base on key features such as the competitive landscape for the product, Average Selling Price, regions/countries/industries its sold, discounts/promotions/launch initiatives, etc., provide an understanding and verifying relationships in the transactional database.</p>
+<p>Past the intel gathering phase from subject Matter Experts and the availability of data with relevant features, the next step in my approach is to figure a customer’s price sensitivity by determining the <a href="https://en.wikipedia.org/wiki/Price_elasticity_of_demand">price elasticity</a> of the product. It is one of the several approaches that help predict the impact of pricing on product demand, and provides guidance to a company’s overall pricing strategy.</p>
+<div id="definition-of-price-elasticity-of-demandped-from-wikipedia" class="section level3">
+<h3>Definition of Price Elasticity of Demand(PED) from wikipedia</h3>
+<blockquote>
+<p>Price elasticity of demand (PED or Ed) is a measure used in economics to show the responsiveness, or elasticity, of the quantity demanded of a good or service to a change in its price, ceteris paribus. <strong>More precisely, it gives the percentage change in quantity demanded in response to a one percent change in price (ceteris paribus)</strong>.</p>
+</blockquote>
+<p>The R code below is a simple example of the Price elasticity analysis using a linear regression model.</p>
+<p>Here’s a visual of the example data.</p>
+<p><img src="../../blog/2017-06-01-pricing-raise-lower-or-stay_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>To determine which variables are strongly correlated to <code>qty</code> sold, let’s use GGally’s ggpairs() function.</p>
+<pre class="r"><code>Final_Product_data %&gt;% select(qty, cost, everything()) %&gt;% ggpairs(lower = &quot;blank&quot;)</code></pre>
+<p><img src="../../blog/2017-06-01-pricing-raise-lower-or-stay_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>The magnitude of the correlation coeffs between <code>qty</code> and <code>cost</code> is the highest, followed by <code>Month</code> and <code>Year</code>, so a linear regression model can include all the variables.</p>
+</div>
+<div id="modeling" class="section level1">
+<h1>Modeling</h1>
+<pre class="r"><code>m.Final_product &lt;- lm(qty ~ cost + Month, data = Final_Product_data)
+sum_m.Final_product &lt;- summary(m.Final_product)
+sum_m.Final_product</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = qty ~ cost + Month, data = Final_Product_data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -108.934  -29.140   -4.127   32.505  158.218 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 400.45221  306.89425   1.305    0.196    
+## cost         -9.21379    0.95594  -9.638 5.54e-15 ***
+## Month         0.06868    0.01264   5.436 5.90e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 48.59 on 79 degrees of freedom
+## Multiple R-squared:  0.883,  Adjusted R-squared:   0.88 
+## F-statistic: 298.1 on 2 and 79 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>In this example, I have included only <code>cost</code> and <code>Month</code> variables with their P value at 5.543328910^{-15}, and
+5.897822610^{-7} respectively, as they appear to be significant in affecting the volume of sale units.</p>
+<p>We can try different model set-ups to find the best fit based on R2 and adjusted R2 values. Using functions in tidyverse/modelr/broom.</p>
+<pre class="r"><code>#Create List of models
+
+formulas_for_lm &lt;- list(
+  prod_no_log &lt;- qty ~cost + Month,
+  prod_w_log &lt;- log10(qty) ~ log10(cost) + Month
+)
+
+# Map the lm function to the list of formulas
+Rsquared_fit_all &lt;- formulas_for_lm %&gt;% 
+  map(lm, data = Final_Product_data) %&gt;% 
+  map_df(glance, .id = &quot;model&quot;) %&gt;% 
+  select(model, r.squared, p.value)
+
+#Display Rsquared 
+
+Rsquared_fit_all</code></pre>
+<pre><code>##   model r.squared      p.value
+## 1     1 0.8829924 1.564806e-37
+## 2     2 0.8656075 3.722364e-35</code></pre>
+<pre class="r"><code># 
+slope_intercept_all &lt;- formulas_for_lm %&gt;% 
+  map(lm, data = Final_Product_data) %&gt;% 
+  map_df(tidy, .id = &quot;model&quot;) %&gt;% 
+  select(model, term, estimate, std.error)
+
+slope_intercept_all</code></pre>
+<pre><code>##   model        term      estimate    std.error
+## 1     1 (Intercept)  4.004522e+02 3.068942e+02
+## 2     1        cost -9.213787e+00 9.559375e-01
+## 3     1       Month  6.868009e-02 1.263543e-02
+## 4     2 (Intercept)  5.217442e+00 8.894790e-01
+## 5     2 log10(cost) -2.157626e+00 3.232426e-01
+## 6     2       Month  1.134625e-04 1.548824e-05</code></pre>
+<p>The best fit model appears to be model 1, so let us visualize the predicted values.</p>
+<pre class="r"><code>plot_model1 &lt;- Final_Product_data %&gt;% 
+  add_predictions(m.Final_product) %&gt;% 
+  ggplot(aes(x = cost)) +
+  geom_point(aes(y = qty), data = Final_Product_data, color = &quot;firebrick&quot;) +
+  geom_line(aes(y = pred))
+
+plot_model1</code></pre>
+<p><img src="../../blog/2017-06-01-pricing-raise-lower-or-stay_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>To estimate the PE, we will need the coefficient on <code>cost</code> <span class="math inline">\((\Delta Q/\Delta P)\)</span> from the model, and the average cost &amp; average quantity sold from the dataset:</p>
+<ul>
+<li>PED <span class="math inline">\(=(\Delta Q/\Delta P)*(\bar{P}/\bar{Q})\)</span>
+where <span class="math inline">\(\Delta Q\)</span> is change in quantity, <span class="math inline">\(\Delta P\)</span> is change in price, <span class="math inline">\(\bar{P}\)</span> is the avg price, and <span class="math inline">\(\bar{Q}\)</span> is
+the avg quantity/sales Units.</li>
+</ul>
+<pre class="r"><code>PEcalc &lt;- function(modelresult, df) {
+  PE &lt;- round(as.numeric(modelresult$coefficients[2] * (mean(df$cost)/mean(df$qty))),2)
+  return(PE)
+}
+
+PEcalc(m.Final_product,Final_Product_data)</code></pre>
+<pre><code>## [1] -3.25</code></pre>
+<p>The PE for the first model is -3.25, which shows that a 1% decrease in price will increase units sold by 3.25%. Or a 10% decrease in price will increase units sold by 32.5% and vice-versa.</p>
+<p>Elasticity Interpretation:</p>
+<ul>
+<li>If PED &lt; 1 (in absolute value), demand is inelastic (we will want to increase the price because changes in price have a relatively small effect on the quantity of good demanded)</li>
+<li>IF PED &gt; 1 (in absolute value), demand is elastic (we will want to decrease the price because changes in price have a larger effect on the quantity or bigger percent change in demand)</li>
+<li>If PED == 1 (Rev is maximized )</li>
+</ul>
+<p>The optimal price includes a “markup” proportional to the price elasticity of demand.</p>
+<p>To find out the optimal price to maximize either revenue, or profit, we simplify the model output to:</p>
+<pre class="r"><code>options(scipen=999)
+
+# x is the price
+
+# Assume no marginal cost
+equation_1_nocost = function(x) x*((m.Final_product$coefficients[[1]]) + PEcalc(m.Final_product,Final_Product_data)*x+ (m.Final_product$coefficients[[3]]))
+
+opt_price_w_no_cost &lt;- optimize(equation_1_nocost, c(50,140), maximum = TRUE)</code></pre>
+<pre class="r"><code># Assume $10 as marginal cost
+equation_w_cost = function(x) (x-10)*((m.Final_product$coefficients[[1]]) + PEcalc(m.Final_product,Final_Product_data)*x+ (m.Final_product$coefficients[[3]]))
+
+opt_price_w_cost &lt;- optimize(equation_w_cost, c(50,100), maximum = TRUE)
+The optimal price for maximizing profit is `r round(opt_price_w_cost[[1]],2)`; the maximum profit will be `$``r round(opt_price_w_cost[[2]],2)`</code></pre>
+<p>The optimal price for maximizing revenue is 61.62; the maximum revenue will be <code>$</code>12339.77.</p>
+<p>Predict the sales for a particular month</p>
+<pre class="r"><code>data_w_new_price &lt;- tibble(cost = opt_price_w_no_cost[[1]], Month = as.IDate(&quot;2017-07-01&quot;))
+predict(m.Final_product, data_w_new_price, interval = &quot;p&quot;)</code></pre>
+<pre><code>##        fit      lwr      upr
+## 1 1024.174 888.1762 1160.171</code></pre>
+<p>Thanks to <a href="http://www.cybaea.net/">Allan Engelhardt</a> for all his help on the analysis/thorough explanation of linear regression models, and the excellent and detailed Cross-Price_Elasticity article by <a href="http://www.DataApple.net">Jack Han</a>.</p>
+</div>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="../../categories/pricing-business-science">Pricing Business Science</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="../../tags/price-elasticity">Price Elasticity</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../tags/linear-regression">Linear Regression</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "skenner-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="../../blog/forecasting-w-prophet-vs-hyndman-s-forecast-package/"
+                class="button big previous">Prophet vs Hyndman’s Forecast Package</a></li>
+    
+
+    
+        <li><a href="../../blog/product-insights-through-trelliscope/"
+                class="button big next">Product Insights Through Trelliscope</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='../../'><img src="../../img/main/logo2.jpg" class="intro-circle" width="150" alt="Intro picture" /></a>
+      
+    
+    
+      <header>
+        <h2>Cup of R/Python in Business</h2>
+        <p>vars_at(R, Python) %in% c(Business Solutions)</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="../../index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/sunitgk/sunitakenner" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/sunita-tashi-kenner-41321810" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn, Part 1: EDA, Feature Engineering</a>
+              </h3>
+              
+              <time class="published" datetime='2019-01-22'>
+                January 22, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/sales-insights-using-shiny-modules-highcharter/">Sales Insights using Shiny Modules &amp; Highcharter</a>
+              </h3>
+              
+              <time class="published" datetime='2018-03-05'>
+                March 5, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a>
+              </h3>
+              
+              <time class="published" datetime='2017-11-15'>
+                November 15, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/product-insights-through-trelliscope/">Product Insights Through Trelliscope</a>
+              </h3>
+              
+              <time class="published" datetime='2017-06-30'>
+                June 30, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/pricing-raise-lower-or-stay/">Pricing: Raise, Lower or Stay</a>
+              </h3>
+              
+              <time class="published" datetime='2017-06-01'>
+                June 1, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          Sunita Kenner
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="../../js/util.js"></script>
+      <script src="../../js/main.js"></script>
+      <script src="../../js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

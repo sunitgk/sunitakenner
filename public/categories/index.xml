@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on R %in% c(`Business`)</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/categories/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Business Science</title>
+      <link>/categories/business-science/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/business-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Competitive Brief</title>
+      <link>/categories/competitive-brief/</link>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/competitive-brief/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Econometric Forecasting</title>
+      <link>/categories/econometric-forecasting/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/econometric-forecasting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>/categories/go/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>/categories/hugo/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jekyll</title>
+      <link>/categories/jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Net Promoter Score</title>
+      <link>/categories/net-promoter-score/</link>
+      <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/net-promoter-score/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pricing Business Science</title>
+      <link>/categories/pricing-business-science/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/pricing-business-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product Insights</title>
+      <link>/categories/product-insights/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/product-insights/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product churn</title>
+      <link>/categories/product-churn/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/product-churn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/categories/r/</link>
+      <pubDate>Fri, 30 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Tutoring</title>
+      <link>/categories/r-tutoring/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r-tutoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny Dashboards</title>
+      <link>/categories/shiny-dashboards/</link>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/shiny-dashboards/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>/categories/teaching/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/teaching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time Series</title>
+      <link>/categories/time-series/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/time-series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualizations</title>
+      <link>/categories/visualizations/</link>
+      <pubDate>Fri, 30 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/visualizations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>feature engineering</title>
+      <link>/categories/feature-engineering/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/feature-engineering/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualizations on R %in% c(`Business`)</title>
+    <link>/categories/visualizations/</link>
+    <description>Recent content in Visualizations on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/visualizations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Product Insights Through Trelliscope</title>
+      <link>/blog/product-insights-through-trelliscope/</link>
+      <pubDate>Fri, 30 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/product-insights-through-trelliscope/</guid>
+      <description>Note: The trelliscope plot displays with blogdown would not have been possible without Yihui Xie’s lightning fast help. Not only did he implement the fix (in an afternoon), but documented/provided 2 options to fixing the trelliscope display issue. Thank you so much Yihui.
+One of the impressive presentations at Jan 2017 RStudio Conference was Ryan Hafen’s trelliscopejs R package in action: Visualization in the Tidyverse. “TrelliscopeJS is a framework for creative interactive displays of small multiples”, and this is incredibly powerful when providing insights on product lines to decision makers.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,948 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/"
+        },
+        "articleSection" : "blog",
+        "name" : "From Powerpoint to ShinyDashboards &amp; Highcharter",
+        "headline" : "From Powerpoint to ShinyDashboards &amp; Highcharter",
+        "description" : "One of my goals for 2017 was to build and provide presentations as interactive products distributed and accessible to the management team as a web app. Using ShinyDashboards and highcharter: R wrapper for Highcharts for visualization, here is a starter example on shinyapps.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2017",
+        "datePublished": "2017-11-15 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2017-11-15 00:00:00 &#43;0000 UTC",
+        "url" : "/blog/from-powerpoint-to-shinydashboards-highcharter/",
+        "wordCount" : "492",
+        "keywords" : [ "blogdown","shiny","highcharter","Blog" ]
+    }
+    </script>
+        
+            
+                <title>From Powerpoint to ShinyDashboards &amp; Highcharter</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.53" />
+        
+
+
+        
+            <meta name="author" content="Sunita Kenner">
+        
+        
+            
+                <meta name="description" content="Cup of R/Python in Business">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="From Powerpoint to ShinyDashboards &amp; Highcharter"/>
+<meta name="twitter:description" content="One of my goals for 2017 was to build and provide presentations as interactive products distributed and accessible to the management team as a web app. Using ShinyDashboards and highcharter: R wrapper for Highcharts for visualization, here is a starter example on shinyapps."/>
+
+        <meta property="og:title" content="From Powerpoint to ShinyDashboards &amp; Highcharter" />
+<meta property="og:description" content="One of my goals for 2017 was to build and provide presentations as interactive products distributed and accessible to the management team as a web app. Using ShinyDashboards and highcharter: R wrapper for Highcharts for visualization, here is a starter example on shinyapps." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/from-powerpoint-to-shinydashboards-highcharter/" /><meta property="article:published_time" content="2017-11-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-11-15T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="From Powerpoint to ShinyDashboards &amp; Highcharter">
+<meta itemprop="description" content="One of my goals for 2017 was to build and provide presentations as interactive products distributed and accessible to the management team as a web app. Using ShinyDashboards and highcharter: R wrapper for Highcharts for visualization, here is a starter example on shinyapps.">
+
+
+<meta itemprop="datePublished" content="2017-11-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-11-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="492">
+
+
+
+<meta itemprop="keywords" content="blogdown,shiny,highcharter," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="../../css/main.css">
+            <link rel="stylesheet" href="../../css/add-on.css">
+            <link rel="stylesheet" href="../../css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/hybrid.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="../../">R %in% C(Business)</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="../../">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../itemized/">
+                            <i class="fa fa-list">&nbsp;</i>Itemized
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="../../">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../itemized/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Itemized
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn, Part 1: EDA, Feature Engineering</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-01-22'>
+                                    January 22, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/sales-insights-using-shiny-modules-highcharter/">Sales Insights using Shiny Modules &amp; Highcharter</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-03-05'>
+                                    March 5, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-11-15'>
+                                    November 15, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/product-insights-through-trelliscope/">Product Insights Through Trelliscope</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-06-30'>
+                                    June 30, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/pricing-raise-lower-or-stay/">Pricing: Raise, Lower or Stay</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-06-01'>
+                                    June 1, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2ffrom-powerpoint-to-shinydashboards-highcharter%2f&amp;text=From%20Powerpoint%20to%20ShinyDashboards%20%26%20Highcharter&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2ffrom-powerpoint-to-shinydashboards-highcharter%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2ffrom-powerpoint-to-shinydashboards-highcharter%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2ffrom-powerpoint-to-shinydashboards-highcharter%2f&amp;title=From%20Powerpoint%20to%20ShinyDashboards%20%26%20Highcharter" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2ffrom-powerpoint-to-shinydashboards-highcharter%2f&amp;title=From%20Powerpoint%20to%20ShinyDashboards%20%26%20Highcharter" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2ffrom-powerpoint-to-shinydashboards-highcharter%2f&amp;title=From%20Powerpoint%20to%20ShinyDashboards%20%26%20Highcharter" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2ffrom-powerpoint-to-shinydashboards-highcharter%2f&amp;description=From%20Powerpoint%20to%20ShinyDashboards%20%26%20Highcharter" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Sunita%20Kenner&amp;body=%2fblog%2ffrom-powerpoint-to-shinydashboards-highcharter%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2017-11-15'>
+            November 15, 2017</time>
+        <span class="author">Sunita Kenner</span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    
+<script src="../../rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="../../rmarkdown-libs/jquery/jquery.min.js"></script>
+<script src="../../rmarkdown-libs/proj4js/proj4.js"></script>
+<link href="../../rmarkdown-libs/highcharts/css/motion.css" rel="stylesheet" />
+<link href="../../rmarkdown-libs/highcharts/css/htmlwdgtgrid.css" rel="stylesheet" />
+<script src="../../rmarkdown-libs/highcharts/highcharts.js"></script>
+<script src="../../rmarkdown-libs/highcharts/highcharts-3d.js"></script>
+<script src="../../rmarkdown-libs/highcharts/highcharts-more.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/stock.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/map.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/annotations.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/boost.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/data.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/drag-panes.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/drilldown.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/item-series.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/offline-exporting.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/overlapping-datalabels.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/exporting.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/export-data.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/funnel.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/heatmap.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/treemap.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/sankey.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/solid-gauge.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/streamgraph.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/sunburst.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/vector.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/wordcloud.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/xrange.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/tilemap.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/venn.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/gantt.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/timeline.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/parallel-coordinates.js"></script>
+<script src="../../rmarkdown-libs/highcharts/modules/bullet.js"></script>
+<script src="../../rmarkdown-libs/highcharts/plugins/grouped-categories.js"></script>
+<script src="../../rmarkdown-libs/highcharts/plugins/motion.js"></script>
+<script src="../../rmarkdown-libs/highcharts/plugins/multicolor_series.js"></script>
+<script src="../../rmarkdown-libs/highcharts/custom/reset.js"></script>
+<script src="../../rmarkdown-libs/highcharts/custom/symbols-extra.js"></script>
+<script src="../../rmarkdown-libs/highcharts/custom/text-symbols.js"></script>
+<script src="../../rmarkdown-libs/highchart-binding/highchart.js"></script>
+
+
+<p>One of my goals for 2017 was to build and provide presentations as interactive products distributed and accessible to the management team as a web app. Using <a href="https://rstudio.github.io/shinydashboard/get_started.html">ShinyDashboards</a> and <a href="http://jkunst.com/highcharter/">highcharter: R wrapper for Highcharts</a> for visualization, here is a <a href="https://busaanalytics.shinyapps.io/compBrief_Blogdown/">starter example on shinyapps.io</a> of one of the presentations that I would have normally created in Powerpoint. Also embedded in the post below.</p>
+<p>Here is an example of the code for the <a href="https://www.highcharts.com/demo/column-drilldown">column with drilldown chart</a> on my dataset.</p>
+<pre class="r"><code>library(tidyverse)
+library(highcharter)</code></pre>
+<pre><code>## Warning: package &#39;bindrcpp&#39; was built under R version 3.4.4</code></pre>
+<p>View market share data</p>
+<pre class="r"><code>mkt_share</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##    Year Vendor    `Annual Rev`
+##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;
+## 1  2016 Other            26.0 
+## 2  2016 Company A        16.0 
+## 3  2016 Company B         8.00
+## 4  2016 Company C         7.00
+## 5  2016 Company E         6.00
+## 6  2016 Company D         2.00</code></pre>
+<pre class="r"><code>other_data</code></pre>
+<pre><code>## # A tibble: 9 x 3
+##    Year Vendor    `Annual Rev`
+##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;
+## 1  2016 Company N        3.00 
+## 2  2016 Company L        2.50 
+## 3  2016 Company J        2.00 
+## 4  2016 Company G        1.00 
+## 5  2016 Company H        1.00 
+## 6  2016 Company I        1.00 
+## 7  2016 Company M        1.00 
+## 8  2016 Company K        0.750
+## 9  2016 Company O        0.500</code></pre>
+<p>Prep the data for drill-down</p>
+<pre class="r"><code>#First data set
+
+first_mkt_share_data &lt;- mkt_share %&gt;%
+  mutate(name = Vendor,
+         y = `Annual Rev`,
+         drilldown = tolower(name)) %&gt;%
+  select(name, y, drilldown) %&gt;%
+  list_parse()
+
+#Second data set containing drill-down content
+data_for_drilled_column &lt;- other_data %&gt;%
+  mutate(name = Vendor,
+         y = `Annual Rev`,
+         drilldown = tolower(name)) %&gt;%
+  select(name, y) %&gt;%
+  list_parse2() %&gt;%
+  map(function(x) {
+    x[[2]] &lt;- as.numeric(x[[2]])
+    x
+})
+
+# Plot using highcharter
+
+hc &lt;- highchart() %&gt;%
+  hc_chart(type = &quot;column&quot;) %&gt;%
+  hc_title(text = &quot;2016: WW Product Market Share $M&quot;) %&gt;%
+  hc_subtitle(text = &quot;Click &#39;Other&#39; to view &#39;Other&#39; Vendors&quot;) %&gt;%
+  hc_xAxis(type = &quot;category&quot;) %&gt;%
+  hc_legend(enabled = FALSE) %&gt;%
+  hc_plotOptions(series = list(boderWidth = 0, dataLabels = list(enabled = TRUE))) %&gt;%
+  hc_add_series(name = &quot;Mkt Share&quot;,colorByPoint = TRUE, data = first_mkt_share_data) %&gt;%
+  hc_drilldown(allowPointDrilldown = TRUE,
+  series = list(list(id = &quot;other&quot;, data = data_for_drilled_column)))
+  
+hc</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"hc_opts":{"title":{"text":"2016: WW Product Market Share $M"},"yAxis":{"title":{"text":null}},"credits":{"enabled":false},"exporting":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"boderWidth":0,"dataLabels":{"enabled":true}},"treemap":{"layoutAlgorithm":"squarified"}},"chart":{"type":"column"},"subtitle":{"text":"Click 'Other' to view 'Other' Vendors"},"xAxis":{"type":"category"},"legend":{"enabled":false},"series":[{"name":"Mkt Share","colorByPoint":true,"data":[{"name":"Other","y":26,"drilldown":"other"},{"name":"Company A","y":16,"drilldown":"company a"},{"name":"Company B","y":8,"drilldown":"company b"},{"name":"Company C","y":7,"drilldown":"company c"},{"name":"Company E","y":6,"drilldown":"company e"},{"name":"Company D","y":2,"drilldown":"company d"}]}],"drilldown":{"allowPointDrilldown":true,"series":[{"id":"other","data":[["Company N",3],["Company L",2.5],["Company J",2],["Company G",1],["Company H",1],["Company I",1],["Company M",1],["Company K",0.75],["Company O",0.5]]}]}},"theme":{"chart":{"backgroundColor":"transparent"}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
+<p><strong>Please note that Highcharts (<a href="http://highcharts.com" class="uri">http://highcharts.com</a>) is a Highsoft product which is not free for commercial and Governmental use.</strong></p>
+<iframe width="900" height="900" scrolling="yes" frameborder="no" src="//busaanalytics.shinyapps.io/compBrief_Blogdown/">
+</iframe>
+<p>There are plenty of <a href="https://rstudio.github.io/shinydashboard/examples.html">ShinyDashboards Examples with source code</a> and <a href="http://jkunst.com/">Joshua Kunst</a> who is the author of Highcharter has done an excellent job of providing examples on how to replicate highcharts demos. Thank you <a href="http://jkunst.com/">Joshua Kunst</a> for all your help/responses on the highchart/highcharter visualization questions I had.</p>
+<p>Other resources for highcharter visualizations that I found useful in creating the visuals:
+* <a href="https://dantonnoriega.github.io/ultinomics.org/post/2017-04-05-highcharter-explainer.html">Danton Noriega’s post</a>
+* <a href="https://www.rdocumentation.org/packages/highcharter/versions/0.5.0/topics/hc_drilldown">R documentation on highcharter package</a></p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="../../categories/competitive-brief">Competitive Brief</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../categories/shiny-dashboards">Shiny Dashboards</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="../../tags/blogdown">blogdown</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../tags/shiny">shiny</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../tags/highcharter">highcharter</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "skenner-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="../../blog/product-insights-through-trelliscope/"
+                class="button big previous">Product Insights Through Trelliscope</a></li>
+    
+
+    
+        <li><a href="../../blog/sales-insights-using-shiny-modules-highcharter/"
+                class="button big next">Sales Insights using Shiny Modules &amp; Highcharter</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='../../'><img src="../../img/main/logo2.jpg" class="intro-circle" width="150" alt="Intro picture" /></a>
+      
+    
+    
+      <header>
+        <h2>Cup of R/Python in Business</h2>
+        <p>vars_at(R, Python) %in% c(Business Solutions)</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="../../index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/sunitgk/sunitakenner" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/sunita-tashi-kenner-41321810" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn, Part 1: EDA, Feature Engineering</a>
+              </h3>
+              
+              <time class="published" datetime='2019-01-22'>
+                January 22, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/sales-insights-using-shiny-modules-highcharter/">Sales Insights using Shiny Modules &amp; Highcharter</a>
+              </h3>
+              
+              <time class="published" datetime='2018-03-05'>
+                March 5, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a>
+              </h3>
+              
+              <time class="published" datetime='2017-11-15'>
+                November 15, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/product-insights-through-trelliscope/">Product Insights Through Trelliscope</a>
+              </h3>
+              
+              <time class="published" datetime='2017-06-30'>
+                June 30, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/pricing-raise-lower-or-stay/">Pricing: Raise, Lower or Stay</a>
+              </h3>
+              
+              <time class="published" datetime='2017-06-01'>
+                June 1, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          Sunita Kenner
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="../../js/util.js"></script>
+      <script src="../../js/main.js"></script>
+      <script src="../../js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

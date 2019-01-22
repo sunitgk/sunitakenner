@@ -1,0 +1,1016 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "/"
+        },
+        "articleSection" : "blog",
+        "name" : "Sales Insights using Shiny Modules &amp; Highcharter",
+        "headline" : "Sales Insights using Shiny Modules &amp; Highcharter",
+        "description" : "One of the business issues was to figure out a balanced distribution of the world wide and US sales force so as to maximize order dollars. This required figuring out each Product Line’s geographical strength and weaknesses in terms of Order $$ and a further drill-down on each of the top performers within the product line. Generating insights for each of the products and a summary per their Product Line meant reusing the same shiny app code for each of those products, for which shiny modules provide an efficient approach.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-03-05 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-03-05 00:00:00 &#43;0000 UTC",
+        "url" : "/blog/sales-insights-using-shiny-modules-highcharter/",
+        "wordCount" : "571",
+        "keywords" : [ "shinyapp","highcharter","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Sales Insights using Shiny Modules &amp; Highcharter</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.53" />
+        
+
+
+        
+            <meta name="author" content="Sunita Kenner">
+        
+        
+            
+                <meta name="description" content="Cup of R/Python in Business">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sales Insights using Shiny Modules &amp; Highcharter"/>
+<meta name="twitter:description" content="One of the business issues was to figure out a balanced distribution of the world wide and US sales force so as to maximize order dollars. This required figuring out each Product Line’s geographical strength and weaknesses in terms of Order $$ and a further drill-down on each of the top performers within the product line. Generating insights for each of the products and a summary per their Product Line meant reusing the same shiny app code for each of those products, for which shiny modules provide an efficient approach."/>
+
+        <meta property="og:title" content="Sales Insights using Shiny Modules &amp; Highcharter" />
+<meta property="og:description" content="One of the business issues was to figure out a balanced distribution of the world wide and US sales force so as to maximize order dollars. This required figuring out each Product Line’s geographical strength and weaknesses in terms of Order $$ and a further drill-down on each of the top performers within the product line. Generating insights for each of the products and a summary per their Product Line meant reusing the same shiny app code for each of those products, for which shiny modules provide an efficient approach." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/sales-insights-using-shiny-modules-highcharter/" /><meta property="article:published_time" content="2018-03-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-03-05T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Sales Insights using Shiny Modules &amp; Highcharter">
+<meta itemprop="description" content="One of the business issues was to figure out a balanced distribution of the world wide and US sales force so as to maximize order dollars. This required figuring out each Product Line’s geographical strength and weaknesses in terms of Order $$ and a further drill-down on each of the top performers within the product line. Generating insights for each of the products and a summary per their Product Line meant reusing the same shiny app code for each of those products, for which shiny modules provide an efficient approach.">
+
+
+<meta itemprop="datePublished" content="2018-03-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="571">
+
+
+
+<meta itemprop="keywords" content="shinyapp,highcharter," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="../../css/main.css">
+            <link rel="stylesheet" href="../../css/add-on.css">
+            <link rel="stylesheet" href="../../css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/hybrid.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="../../">R %in% C(Business)</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="../../">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../itemized/">
+                            <i class="fa fa-list">&nbsp;</i>Itemized
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="../../contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="../../">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../itemized/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Itemized
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../../contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn, Part 1: EDA, Feature Engineering</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-01-22'>
+                                    January 22, 2019</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/sales-insights-using-shiny-modules-highcharter/">Sales Insights using Shiny Modules &amp; Highcharter</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-03-05'>
+                                    March 5, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-11-15'>
+                                    November 15, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/product-insights-through-trelliscope/">Product Insights Through Trelliscope</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-06-30'>
+                                    June 30, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/pricing-raise-lower-or-stay/">Pricing: Raise, Lower or Stay</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-06-01'>
+                                    June 1, 2017</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fsales-insights-using-shiny-modules-highcharter%2f&amp;text=Sales%20Insights%20using%20Shiny%20Modules%20%26%20Highcharter&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fsales-insights-using-shiny-modules-highcharter%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fsales-insights-using-shiny-modules-highcharter%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fsales-insights-using-shiny-modules-highcharter%2f&amp;title=Sales%20Insights%20using%20Shiny%20Modules%20%26%20Highcharter" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fsales-insights-using-shiny-modules-highcharter%2f&amp;title=Sales%20Insights%20using%20Shiny%20Modules%20%26%20Highcharter" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fsales-insights-using-shiny-modules-highcharter%2f&amp;title=Sales%20Insights%20using%20Shiny%20Modules%20%26%20Highcharter" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fsales-insights-using-shiny-modules-highcharter%2f&amp;description=Sales%20Insights%20using%20Shiny%20Modules%20%26%20Highcharter" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Sunita%20Kenner&amp;body=%2fblog%2fsales-insights-using-shiny-modules-highcharter%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="../../blog/sales-insights-using-shiny-modules-highcharter/">Sales Insights using Shiny Modules &amp; Highcharter</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-03-05'>
+            March 5, 2018</time>
+        <span class="author">Sunita Kenner</span>
+        
+        
+    </div>
+</header>
+
+
+  
+
+  
+
+  <div id="content">
+    
+
+
+<p>One of the business issues was to figure out a balanced distribution of the world wide and US sales force so as to maximize order dollars. This required figuring out each Product Line’s geographical strength and weaknesses in terms of <code>Order $$</code> and a further drill-down on each of the top performers within the product line. Generating insights for each of the products and a summary per their Product Line meant reusing the same shiny app code for each of those products, for which <a href="https://shiny.rstudio.com/articles/modules.html">shiny modules</a> provide an efficient approach.</p>
+<p>Many thanks to <a href="https://github.com/wch">Winston Chang</a> who sacrificed his breaks at the RStudio Shiny App training course to patiently answer and help me resolve some of the issues I had with the development of this biz dashboard. Thanks to the RStudio community member <span class="citation">@nutterb</span> (Benjamin) for introducing me to scoped verbs in dplyr which resolved the issue posted <a href="https://community.rstudio.com/t/issue-making-dplyr-reactive-variables-work-in-shiny-module/3694">here</a>.</p>
+<p>Here is the server code that calls the module</p>
+<p><strong>Please note that Highcharts (<a href="http://highcharts.com" class="uri">http://highcharts.com</a>) is a Highsoft product which is not free for commercial and Governmental use.</strong></p>
+<p>A link to a minimal example of the shiny app is provided below and also embedded in the post.</p>
+<pre class="r"><code>source(&quot;alt_prod_blog.R&quot;)
+
+ui &lt;- dashboardPage(
+  # Application title ---------------------------------------------------------
+  dashboardHeader(title = &quot;Business Insights&quot;, titleWidth = 200),
+  ),
+  
+  # Output: -----------------------------------------------------------------
+  dashboardBody(
+    # Define tabs per product
+    tabsetPanel(
+      id = &quot;lic_data_set_both&quot;,
+      tabPanel(&quot;ProductA&quot;, TS_module_UI(&quot;productA&quot;)),
+      tabPanel(&quot;ProductB&quot;, TS_module_UI(&quot;productB&quot;)),
+      tabPanel(&quot;ALL&quot;, TS_module_UI(&quot;all&quot;))
+      
+    )
+  )
+
+server &lt;- function(input, output) {
+  x     &lt;- reactive(input$year)
+  y     &lt;- reactive(input$y)
+  prod_group &lt;- reactive(input$prod_group)
+  show_data &lt;- reactive(input$show_data)
+  
+  callModule(
+    TS_module,
+    &quot;productA&quot;,
+    data = list(lic_data_set_both, mapdata, worldmapdata),
+    product = &quot;ProductA&quot;,
+    prod_group,
+    x,
+    y,
+    show_data
+  )
+  callModule(
+    TS_module,
+    &quot;productB&quot;,
+    data = list(lic_data_set_both, mapdata, worldmapdata),
+    product = &quot;ProductB&quot;,
+    prod_group,
+    x,
+    y,
+    show_data
+  )
+  callModule(
+    TS_module,
+    &quot;all&quot;,
+    data = list(lic_data_set_both, mapdata, worldmapdata),
+    product = &quot;ALL&quot;,
+    prod_group,
+    x,
+    y,
+    show_data
+  )
+}
+
+shinyApp(ui = ui, server = server)</code></pre>
+<p>Here is an extract of the Module UI and server piece.</p>
+<pre class="r"><code># Module UI -------------------------------------------------------------------
+
+TS_module_UI &lt;- function(id) {
+  ns &lt;- NS(id)
+  
+  tagList(
+   
+    fluidRow(
+      box(highchartOutput(ns(&quot;product_group&quot;))),
+      box(highchartOutput(ns(&quot;by_region&quot;))),
+      box(highchartOutput(ns(&quot;top_10_prod&quot;))),
+      box(highchartOutput(ns(&quot;top_10_states&quot;)))
+    )
+  )
+}
+
+#Module Server ----------------------------------------------------------------------------
+
+TS_module &lt;-
+  function(input,
+           output,
+           session,
+           data,
+           product,
+           prod_group,
+           x,
+           y,
+           show_data) {
+    
+    TS_with_year_filtered &lt;- reactive({
+      
+      data &lt;- as_tibble(data[[1]])
+      get_year &lt;- x()
+      get_unit_measure &lt;- y()
+      
+      if (prod_group()) {
+        data %&gt;%
+          filter(between(FY, get_year[1], get_year[2]),
+                 `Prod Group` == &quot;SERVER&quot;)
+      } else {
+        data %&gt;% filter(between(FY, get_year[1], get_year[2]))
+      }
+    })
+    
+    
+    TS_with_All_vs_namedProdtype &lt;- reactive({
+      
+      if (as.character(product) == &quot;ALL&quot;) {
+        TS_with_year_filtered()
+      } else {
+        TS_with_year_filtered() %&gt;%
+          filter(Product == as.character(product))
+      }
+    })
+    
+ 
+    TS_with_Product &lt;- reactive({
+      get_unit_measure &lt;- y()
+      Product_data &lt;- TS_with_year_filtered()
+      
+      
+      if (as.character(product) == &quot;ALL&quot;) {
+        
+        Product_data %&gt;%
+          group_by_at(.vars = c(&quot;FY&quot;, &quot;SalesTeam&quot;)) %&gt;%
+          summarize_at(vars(get_unit_measure), sum)
+      } else {
+        Product_data %&gt;%
+          filter(Product == as.character(product)) %&gt;%
+          group_by_at(.vars = c(&quot;FY&quot;, &quot;SalesTeam&quot;)) %&gt;%
+          summarize_at(vars(get_unit_measure), sum)
+      }
+    })
+    
+    
+    #Calculate Total YTD data
+    
+    TS_YTD_Orders &lt;- reactive({
+      
+      TS_with_Product() %&gt;%
+        summarise_at(.vars = c(y()), funs(Total = sum)) %&gt;%
+        summarise(Total = sum(Total)) %&gt;%
+        pull()
+    })
+    
+    
+    generate_top_10_states &lt;- reactive({
+      get_unit_measure &lt;- y()
+      TS_state_orders() %&gt;%
+        arrange_at(.vars = c(get_unit_measure), desc) %&gt;%
+        head(10)
+      
+    })
+    
+    output$top_10_states &lt;- renderHighchart({
+      
+      df &lt;- generate_top_10_states()
+      get_unit_measure &lt;- y()
+      
+      highchart() %&gt;%
+        hc_title(text = &quot;Top 10: Orders_by_state&quot;) %&gt;%
+        hc_add_series(df,
+                      &quot;pie&quot;,
+                      hcaes(&quot;`postal-code`&quot;,!!get_unit_measure),
+                      name = as.character(get_unit_measure)) %&gt;%
+        hc_plotOptions(series = list(
+          dataLabels = list(enabled = TRUE, format = &#39;{point.name}: {point.percentage:.1f}%&#39;))) %&gt;%
+        hc_exporting(
+          enabled = T,
+          buttons = list(contextButton = list(
+            menuItems = c(
+              &quot;downloadPNG&quot;,
+              &quot;downloadJPEG&quot;,
+              &quot;separator&quot;,
+              &quot;downloadCSV&quot;,
+              &quot;downloadXLS&quot;
+            )
+          )),
+          filename = &quot;Top_10_ordersbystate&quot;
+        )
+    })</code></pre>
+<p>RStudio has quite a few tutorials on <a href="https://www.rstudio.com/resources/webinars/understanding-shiny-modules/">Shiny Modules</a>. Joe Cheng’s article on Modularizing <a href="https://shiny.rstudio.com/articles/modules.html">Shiny App Code</a>. Other:</p>
+<p>Here is a <a href="https://busaanalytics.shinyapps.io/Module_hc_blogdown_app/">Minimal example on shinyapps.io</a>. Also embedded in the post.
+<iframe width="900" height="900" scrolling="yes" frameborder="no"  src="//busaanalytics.shinyapps.io/Module_hc_blogdown_app/"> </iframe></p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="../../categories/product-insights">Product Insights</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../categories/business-science">Business Science</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="../../tags/shinyapp">shinyapp</a></li>
+                
+                
+                <li><a class="article-category-link" href="../../tags/highcharter">highcharter</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "skenner-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/"
+                class="button big previous">From Powerpoint to ShinyDashboards &amp; Highcharter</a></li>
+    
+
+    
+        <li><a href="../../blog/predicting-customer-churn-part-1-eda-feature-engineering/"
+                class="button big next">Predicting Customer Churn, Part 1: EDA, Feature Engineering</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='../../'><img src="../../img/main/logo2.jpg" class="intro-circle" width="150" alt="Intro picture" /></a>
+      
+    
+    
+      <header>
+        <h2>Cup of R/Python in Business</h2>
+        <p>vars_at(R, Python) %in% c(Business Solutions)</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="../../index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/sunitgk/sunitakenner" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/sunita-tashi-kenner-41321810" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn, Part 1: EDA, Feature Engineering</a>
+              </h3>
+              
+              <time class="published" datetime='2019-01-22'>
+                January 22, 2019
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/sales-insights-using-shiny-modules-highcharter/">Sales Insights using Shiny Modules &amp; Highcharter</a>
+              </h3>
+              
+              <time class="published" datetime='2018-03-05'>
+                March 5, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a>
+              </h3>
+              
+              <time class="published" datetime='2017-11-15'>
+                November 15, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/product-insights-through-trelliscope/">Product Insights Through Trelliscope</a>
+              </h3>
+              
+              <time class="published" datetime='2017-06-30'>
+                June 30, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/pricing-raise-lower-or-stay/">Pricing: Raise, Lower or Stay</a>
+              </h3>
+              
+              <time class="published" datetime='2017-06-01'>
+                June 1, 2017
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        &copy; 2019
+        
+          Sunita Kenner
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="../../js/util.js"></script>
+      <script src="../../js/main.js"></script>
+      <script src="../../js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

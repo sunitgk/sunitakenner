@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R %in% c(`Business`)</title>
+    <link>/</link>
+    <description>Recent content on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Predicting Customer Churn, Part 1: EDA, Feature Engineering</title>
+      <link>/blog/predicting-customer-churn-part-1-eda-feature-engineering/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/predicting-customer-churn-part-1-eda-feature-engineering/</guid>
+      <description>This is Part 1 of a 2 Part series of predicting Customer Churn. The first step to predicting customer churn for a product “X” is understanding who these customers are; specifically, what purchase behavior patterns tell their story? Quantifying customer purchase behavior patterns, is one of the approaches that answers the question, and feature engineering produces the quantification parameters to output 2 useful products:
+Product 1: Quantitative Segmentation of our customers: Who are they?</description>
+    </item>
+    
+    <item>
+      <title>Sales Insights using Shiny Modules &amp; Highcharter</title>
+      <link>/blog/sales-insights-using-shiny-modules-highcharter/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/sales-insights-using-shiny-modules-highcharter/</guid>
+      <description>One of the business issues was to figure out a balanced distribution of the world wide and US sales force so as to maximize order dollars. This required figuring out each Product Line’s geographical strength and weaknesses in terms of Order $$ and a further drill-down on each of the top performers within the product line. Generating insights for each of the products and a summary per their Product Line meant reusing the same shiny app code for each of those products, for which shiny modules provide an efficient approach.</description>
+    </item>
+    
+    <item>
+      <title>From Powerpoint to ShinyDashboards &amp; Highcharter</title>
+      <link>/blog/from-powerpoint-to-shinydashboards-highcharter/</link>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/from-powerpoint-to-shinydashboards-highcharter/</guid>
+      <description>One of my goals for 2017 was to build and provide presentations as interactive products distributed and accessible to the management team as a web app. Using ShinyDashboards and highcharter: R wrapper for Highcharts for visualization, here is a starter example on shinyapps.</description>
+    </item>
+    
+    <item>
+      <title>Product Insights Through Trelliscope</title>
+      <link>/blog/product-insights-through-trelliscope/</link>
+      <pubDate>Fri, 30 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/product-insights-through-trelliscope/</guid>
+      <description>Note: The trelliscope plot displays with blogdown would not have been possible without Yihui Xie’s lightning fast help. Not only did he implement the fix (in an afternoon), but documented/provided 2 options to fixing the trelliscope display issue. Thank you so much Yihui.
+One of the impressive presentations at Jan 2017 RStudio Conference was Ryan Hafen’s trelliscopejs R package in action: Visualization in the Tidyverse. “TrelliscopeJS is a framework for creative interactive displays of small multiples”, and this is incredibly powerful when providing insights on product lines to decision makers.</description>
+    </item>
+    
+    <item>
+      <title>Fancy App 1</title>
+      <link>/itemized/item1/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/itemized/item1/</guid>
+      <description> App 1 </description>
+    </item>
+    
+    <item>
+      <title>Fancy App 2</title>
+      <link>/itemized/item2/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/itemized/item2/</guid>
+      <description> App 2 </description>
+    </item>
+    
+    <item>
+      <title>Fancy App 3</title>
+      <link>/itemized/item3/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/itemized/item3/</guid>
+      <description> App 3 </description>
+    </item>
+    
+    <item>
+      <title>Fancy App 4</title>
+      <link>/itemized/item4/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/itemized/item4/</guid>
+      <description> App 4 </description>
+    </item>
+    
+    <item>
+      <title>Pricing: Raise, Lower or Stay</title>
+      <link>/blog/pricing-raise-lower-or-stay/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/pricing-raise-lower-or-stay/</guid>
+      <description>“We would like to increase our revenue, so can we raise the price of Product”X&amp;quot;&amp;quot;? A question I’m often asked during Financial &amp;amp; Forecasting Fiscal Year Planning cycles. Using pricing as one of the levers to maximize revenue or profit margins is one of the challenging decisions businesses have to make. For offerings already in the market, how does a business determine if the pricing is right or optimal without the guesswork or intuition?</description>
+    </item>
+    
+    <item>
+      <title>Prophet vs Hyndman’s Forecast Package</title>
+      <link>/blog/forecasting-w-prophet-vs-hyndman-s-forecast-package/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/forecasting-w-prophet-vs-hyndman-s-forecast-package/</guid>
+      <description>Having used Rob Hyndman’s forecasting package in R, I decided to give Facebook’s Prophet package a spin and do a comparison of the results.
+##Forecasts using Prophet
+The Time-series data sets: - Daily data set
+## y ds ## 1 8 2016-05-10 ## 2 10 2016-05-11 ## 3 3 2016-05-11 ## 4 7 2016-05-12 ## 5 3 2016-05-12 ## 6 3 2016-05-12 Prophet provides the ability to forecast projected growth based on market intel, by specifying the carrying capacity ‘cap’; the forecast should reach the maximum/saturation at the set ‘cap’.</description>
+    </item>
+    
+    <item>
+      <title>Teaching R to 5th-Middle Graders</title>
+      <link>/blog/teaching-r-to-5th-middle-graders/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/teaching-r-to-5th-middle-graders/</guid>
+      <description>Teaching R to 5th graders-Middle Schoolers during the weekend has been both enlightening and humbling.
+Enlightening because kids understand data with context far better than adults; perhaps because they are not encumbered by the Big Data noise and always prefer visualization over text. I’ve learned to work within the limits of their attention span (so lots of breaks) and interest, cultivating a continuous learning environment versus a competitive one, a “We” versus an “I” approach, and “humbleness” in place “arrogance”.</description>
+    </item>
+    
+    <item>
+      <title>Net Promoter Score: Using Ggvis/NPS Package in R</title>
+      <link>/blog/net-promoter-score-using-ggvis-nps-package-in-r/</link>
+      <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/net-promoter-score-using-ggvis-nps-package-in-r/</guid>
+      <description>“How likely are you to recommend”Company A&amp;quot; to a friend?&amp;quot; is an Net Promoter Score (NPS) question (Likelihood to Recommend/LTR) which categorizes the responses(voice of the customers) under 3 camps:
+  Customers LTR_Score    Promoters 9 or 10  Passives 7 or 8  Detractors 0 to 6    A customer loyalty metric introduced by Fred Reicheld, Founder of Bain &amp;amp; Company’s Loyalty Practice, the Net Promoter Score (NPS) is used at my work as a compass by business decision makers to understand if NPS provides an insight to what drives customers to repeat purchase, referrals, and resistance to competitor offerings.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/blog/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>/blog/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>/blog/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/goisforlovers/</guid>
+      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>/blog/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/hugoisforlovers/</guid>
+      <description>&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;
+
+&lt;p&gt;Go to &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hugo releases&lt;/a&gt; and download the
+appropriate version for your os and architecture.&lt;/p&gt;
+
+&lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;
+
+&lt;p&gt;More complete instructions are available at &lt;a href=&#34;./overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrate to Hugo from Jekyll</title>
+      <link>/blog/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/migrate-from-jekyll/</guid>
+      <description>&lt;h2 id=&#34;move-static-content-to-static&#34;&gt;Move static content to &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Jekyll has a rule that any directory not starting with &lt;code&gt;_&lt;/code&gt; will be copied as-is to the &lt;code&gt;_site&lt;/code&gt; output. Hugo keeps all static content under &lt;code&gt;static&lt;/code&gt;. You should therefore move it all there.
+With Jekyll, something that looked like&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;▾ &amp;lt;root&amp;gt;/
+    ▾ images/
+        logo.png
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

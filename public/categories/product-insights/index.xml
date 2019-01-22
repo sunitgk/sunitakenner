@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Product Insights on R %in% c(`Business`)</title>
+    <link>/categories/product-insights/</link>
+    <description>Recent content in Product Insights on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/product-insights/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sales Insights using Shiny Modules &amp; Highcharter</title>
+      <link>/blog/sales-insights-using-shiny-modules-highcharter/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/sales-insights-using-shiny-modules-highcharter/</guid>
+      <description>One of the business issues was to figure out a balanced distribution of the world wide and US sales force so as to maximize order dollars. This required figuring out each Product Line’s geographical strength and weaknesses in terms of Order $$ and a further drill-down on each of the top performers within the product line. Generating insights for each of the products and a summary per their Product Line meant reusing the same shiny app code for each of those products, for which shiny modules provide an efficient approach.</description>
+    </item>
+    
+    <item>
+      <title>Product Insights Through Trelliscope</title>
+      <link>/blog/product-insights-through-trelliscope/</link>
+      <pubDate>Fri, 30 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/product-insights-through-trelliscope/</guid>
+      <description>Note: The trelliscope plot displays with blogdown would not have been possible without Yihui Xie’s lightning fast help. Not only did he implement the fix (in an afternoon), but documented/provided 2 options to fixing the trelliscope display issue. Thank you so much Yihui.
+One of the impressive presentations at Jan 2017 RStudio Conference was Ryan Hafen’s trelliscopejs R package in action: Visualization in the Tidyverse. “TrelliscopeJS is a framework for creative interactive displays of small multiples”, and this is incredibly powerful when providing insights on product lines to decision makers.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching on R %in% c(`Business`)</title>
+    <link>/categories/teaching/</link>
+    <description>Recent content in Teaching on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/teaching/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Teaching R to 5th-Middle Graders</title>
+      <link>/blog/teaching-r-to-5th-middle-graders/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/teaching-r-to-5th-middle-graders/</guid>
+      <description>Teaching R to 5th graders-Middle Schoolers during the weekend has been both enlightening and humbling.
+Enlightening because kids understand data with context far better than adults; perhaps because they are not encumbered by the Big Data noise and always prefer visualization over text. I’ve learned to work within the limits of their attention span (so lots of breaks) and interest, cultivating a continuous learning environment versus a competitive one, a “We” versus an “I” approach, and “humbleness” in place “arrogance”.</description>
+    </item>
+    
+  </channel>
+</rss>

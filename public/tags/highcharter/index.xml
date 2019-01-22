@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>highcharter on R %in% c(`Business`)</title>
+    <link>/tags/highcharter/</link>
+    <description>Recent content in highcharter on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/highcharter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sales Insights using Shiny Modules &amp; Highcharter</title>
+      <link>/blog/sales-insights-using-shiny-modules-highcharter/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/sales-insights-using-shiny-modules-highcharter/</guid>
+      <description>One of the business issues was to figure out a balanced distribution of the world wide and US sales force so as to maximize order dollars. This required figuring out each Product Line’s geographical strength and weaknesses in terms of Order $$ and a further drill-down on each of the top performers within the product line. Generating insights for each of the products and a summary per their Product Line meant reusing the same shiny app code for each of those products, for which shiny modules provide an efficient approach.</description>
+    </item>
+    
+    <item>
+      <title>From Powerpoint to ShinyDashboards &amp; Highcharter</title>
+      <link>/blog/from-powerpoint-to-shinydashboards-highcharter/</link>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/from-powerpoint-to-shinydashboards-highcharter/</guid>
+      <description>One of my goals for 2017 was to build and provide presentations as interactive products distributed and accessible to the management team as a web app. Using ShinyDashboards and highcharter: R wrapper for Highcharts for visualization, here is a starter example on shinyapps.</description>
+    </item>
+    
+  </channel>
+</rss>

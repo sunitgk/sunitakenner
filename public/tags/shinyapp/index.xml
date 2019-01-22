@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shinyapp on R %in% c(`Business`)</title>
+    <link>/tags/shinyapp/</link>
+    <description>Recent content in shinyapp on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/shinyapp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sales Insights using Shiny Modules &amp; Highcharter</title>
+      <link>/blog/sales-insights-using-shiny-modules-highcharter/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/sales-insights-using-shiny-modules-highcharter/</guid>
+      <description>One of the business issues was to figure out a balanced distribution of the world wide and US sales force so as to maximize order dollars. This required figuring out each Product Line’s geographical strength and weaknesses in terms of Order $$ and a further drill-down on each of the top performers within the product line. Generating insights for each of the products and a summary per their Product Line meant reusing the same shiny app code for each of those products, for which shiny modules provide an efficient approach.</description>
+    </item>
+    
+    <item>
+      <title>Net Promoter Score: Using Ggvis/NPS Package in R</title>
+      <link>/blog/net-promoter-score-using-ggvis-nps-package-in-r/</link>
+      <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/net-promoter-score-using-ggvis-nps-package-in-r/</guid>
+      <description>“How likely are you to recommend”Company A&amp;quot; to a friend?&amp;quot; is an Net Promoter Score (NPS) question (Likelihood to Recommend/LTR) which categorizes the responses(voice of the customers) under 3 camps:
+  Customers LTR_Score    Promoters 9 or 10  Passives 7 or 8  Detractors 0 to 6    A customer loyalty metric introduced by Fred Reicheld, Founder of Bain &amp;amp; Company’s Loyalty Practice, the Net Promoter Score (NPS) is used at my work as a compass by business decision makers to understand if NPS provides an insight to what drives customers to repeat purchase, referrals, and resistance to competitor offerings.</description>
+    </item>
+    
+  </channel>
+</rss>

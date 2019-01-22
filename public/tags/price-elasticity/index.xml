@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Price Elasticity on R %in% c(`Business`)</title>
+    <link>/tags/price-elasticity/</link>
+    <description>Recent content in Price Elasticity on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/price-elasticity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pricing: Raise, Lower or Stay</title>
+      <link>/blog/pricing-raise-lower-or-stay/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/pricing-raise-lower-or-stay/</guid>
+      <description>“We would like to increase our revenue, so can we raise the price of Product”X&amp;quot;&amp;quot;? A question I’m often asked during Financial &amp;amp; Forecasting Fiscal Year Planning cycles. Using pricing as one of the levers to maximize revenue or profit margins is one of the challenging decisions businesses have to make. For offerings already in the market, how does a business determine if the pricing is right or optimal without the guesswork or intuition?</description>
+    </item>
+    
+  </channel>
+</rss>

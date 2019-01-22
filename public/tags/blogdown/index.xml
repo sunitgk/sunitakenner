@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blogdown on R %in% c(`Business`)</title>
+    <link>/tags/blogdown/</link>
+    <description>Recent content in blogdown on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/blogdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>From Powerpoint to ShinyDashboards &amp; Highcharter</title>
+      <link>/blog/from-powerpoint-to-shinydashboards-highcharter/</link>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/from-powerpoint-to-shinydashboards-highcharter/</guid>
+      <description>One of my goals for 2017 was to build and provide presentations as interactive products distributed and accessible to the management team as a web app. Using ShinyDashboards and highcharter: R wrapper for Highcharts for visualization, here is a starter example on shinyapps.</description>
+    </item>
+    
+  </channel>
+</rss>

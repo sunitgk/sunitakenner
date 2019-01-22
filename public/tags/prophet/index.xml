@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prophet on R %in% c(`Business`)</title>
+    <link>/tags/prophet/</link>
+    <description>Recent content in Prophet on R %in% c(`Business`)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/prophet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prophet vs Hyndman’s Forecast Package</title>
+      <link>/blog/forecasting-w-prophet-vs-hyndman-s-forecast-package/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/forecasting-w-prophet-vs-hyndman-s-forecast-package/</guid>
+      <description>Having used Rob Hyndman’s forecasting package in R, I decided to give Facebook’s Prophet package a spin and do a comparison of the results.
+##Forecasts using Prophet
+The Time-series data sets: - Daily data set
+## y ds ## 1 8 2016-05-10 ## 2 10 2016-05-11 ## 3 3 2016-05-11 ## 4 7 2016-05-12 ## 5 3 2016-05-12 ## 6 3 2016-05-12 Prophet provides the ability to forecast projected growth based on market intel, by specifying the carrying capacity ‘cap’; the forecast should reach the maximum/saturation at the set ‘cap’.</description>
+    </item>
+    
+  </channel>
+</rss>
