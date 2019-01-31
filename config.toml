@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://sgkenner.com"
 languageCode = "en-us"
 title = "Blog - Sunita Kenner"
 theme = "hugo-future-imperfect"
