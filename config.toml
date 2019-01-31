@@ -29,7 +29,7 @@ enableEmoji = true
   # Sets navbarTitle to match the section of the website
   dynamicTitles        = false
   # Sets RSS icons to appear on the sidebar with the social media buttons
-  rssAppearAtTop       = true
+  rssAppearAtTop       = false
   rssAppearAtBottom    = false
   # Sets Social Media icons to appear on the sidebar
   socialAppearAtTop    = true
@@ -204,4 +204,4 @@ enableEmoji = true
   orcid            = ""
   #researchgate     = ""
   # Email
-  email            = ""
+  email            = "gurungkenner@gmail.com"
