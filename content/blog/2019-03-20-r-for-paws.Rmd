@@ -1,0 +1,146 @@
+---
+title: R for “paws"
+author: Sunita Kenner
+date: '2019-03-20'
+slug: r-for-paws
+categories:
+  - Teaching
+tags: []
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+type: post
+---
+
+With the help of 2 R-Ninja Eighth Graders, [Tara and Ben](https://benaracreations2015.shinyapps.io/gr5project/) who have been *R-ing* since they were 5th graders, I recently taught **Coding in R: Information Visualized** class (Feb 23rd - March 2019) to Middle Graders (Grades 6-8) for [Saturday Academy, a non-profit organisation](https://www.saturdayacademy.org/). We donated all proceeds from teaching the class to [Family Dog Shelter, Portland, OR](https://www.familydogsnewlife.org/) and [Oregon Humane Society, Portland, OR](https://www.oregonhumane.org/), and we will continue to **R for Paws** by donating all proceeds from teaching R to animal shelters.
+
+The 3 key objectives of the **Coding in R: Information Visualized** class:
+
+### Objective 1: 
+Understand and Construct data sets using vectors and tibbles: 
+
+```{r, echo = F, message = F, error = F}
+library(tidyverse)
+library(RColorBrewer)
+
+```
+
+```{r}
+Type_of_Pets <- c("Freshwater_Fish", "Cat", "Dog", "Bird", 
+                  "Saltwater fish", "small animal", "Reptile", "Horse") 
+Number_of_Pets <- c(139.3, 94.2, 89.7, 20.3, 
+                    18.8, 14, 9.4, 7.6)
+Total_Pets <- tibble(Type_of_Pets, Number_of_Pets)
+
+# View Total_Pets
+Total_Pets
+
+# View the structure of the data. What type of variables do you have?
+str(Total_Pets)
+
+```
+
+Based on Understanding 1, move to reading local excel/csv/rds files.  Data from:
+```{r}
+
+Pet_US_Stats <- readxl::read_excel("~/Documents/sunitakenner/Product_Data/Day2_Pet_Data.xlsx")
+
+#Different way you can look at data
+glimpse(Pet_US_Stats)
+
+#Other functions to understand data
+summary(Pet_US_Stats)
+
+```
+
+
+### Objective 2: Visualize the dataset using ggplot2/ggplotly
+
+```{r}
+
+ggplot(Pet_US_Stats) + 
+  geom_col(mapping = aes(x =Year_From , 
+                         y = `Number in Millions`, 
+                         fill = Pet), 
+                         position = "dodge") + 
+  scale_fill_brewer()
+
+```
+
+facet_wrap() power
+```{r}
+ggplot(Pet_US_Stats) + 
+  geom_point(aes(x = Year_From, y = `Number in Millions`, color = Pet)) + 
+  facet_wrap(~Pet)
+```
+
+```{r}
+ggplot(Pet_US_Stats) + 
+  geom_boxplot(mapping = aes(x = Pet, y = `Number in Millions`, fill = Pet)) +
+  theme(legend.position = "none")
+```
+
+
+### Objective 3: Learn the basics of writing functions in R:
+
+The middle schoolers who attended this class were well acquainted with 'mean', 'range', 'median' and knew the Math for deriving those statistics. Mapping the math to the functions in R as demonstrated below proved to be a fun learning experience for the kids.  They loved it (Please see feedback at the end of the post for the class).  Two middle schoolers volunteered to write their own mean and range functions.  Tara and Ben helped out with the median function. 
+
+```{r}
+#Create a numerical vector of length 5
+test_vector <- c(4,5,7,1,6)
+
+#Add the numbers in test_vector
+manual_add <- 4+5+7+1+6
+
+#Use R function sum() to add the numbers in test vector
+r_sum <- sum(test_vector)
+
+#Count the number of elements in test_vector using R function: length()
+count_vectorelts <- length(test_vector)
+
+#Calculate mean: r_sum/count_vectorelts
+the_mean <- r_sum/count_vectorelts
+
+#Now translate all the above to a function 
+
+myownmean <- function(numbers) {
+  meanresult <- sum(numbers)/length(numbers)
+  return(meanresult)
+}
+
+myownmean(test_vector)
+
+```
+
+```{r}
+myownrange <- function(numbers) {
+  
+  smallest_number <- min(numbers)
+  largest_number  <- max(numbers)
+  Therange        <- max(numbers) - min(numbers)
+  
+  return(Therange)
+}
+
+myownrange(test_vector)
+
+```
+
+Here's the function median in German from Tara and Ben.
+
+```{r}
+Reichweite <- function(x) {
+    Reichweiteresult <- max(x) - min(x)
+    return(Reichweiteresult)
+}
+
+Zahlen1 <- c(4,0,5,2,2,8)
+
+Reichweite(Zahlen1)
+```
+
+
+We'd like to thank Garrett Grolemund @RStudio for all his help in making this class a success, and at RStudio & DataCamp for helping Tara and Ben continue their journey in R with their encouragement and generosity.  Thank you!!
+

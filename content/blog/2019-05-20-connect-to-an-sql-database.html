@@ -1,0 +1,118 @@
+---
+title: Connect to an SQL Database from RStudio
+author: Sunita Kenner
+date: '2019-01-20'
+slug: connect-to-an-sql-database
+categories:
+  - ETL
+tags:
+  - odbc
+  - Dbi
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+type: post
+---
+
+
+
+<p>The objective of this post is to document how to successfully connect to an SQL database from RStudioIDE user. Follow instructions at <a href="https://db.rstudio.com/getting-started/connect-to-database/">rstudio Connect to database</a>.</p>
+<pre class="r"><code>1. brew install freetds:  &quot;--with-unixodbc has depreciated, not needed&quot;
+2. brew install psqlodbc
+3. brew install mysql
+4. brew install sqliteodbc
+5. Find odbcinst.ini
+sudo find / -name odbcinst.ini (should be in usr/local/etc/)
+nano /usr/local/etc/odbcinst.ini
+
+6. Add the following &amp; save
+
+[PostgreSQL Driver]
+Driver          = /usr/local/lib/psqlodbcw.so
+
+[SQLite Driver]
+Driver          = /usr/local/lib/libsqlite3odbc.dylib
+
+[ODBC for FreeTDS]
+Driver          = /usr/local/lib/libtdsodbc.so
+
+7. Find odbc.ini
+sudo find / -name odbc.ini (should be in usr/local/etc/)
+
+nano /usr/local/etc/odbc.ini
+
+8. Add the following &amp; save
+
+[PostgreSQL]
+Driver              = PostgreSQL Driver
+Database            = test_db
+Servername          = localhost
+UserName            = postgres
+Password            = password
+Port                = 5432
+
+[SQLite]
+Driver          = SQLite Driver
+Database=/tmp/testing
+
+[ODBC for FreeTDS]
+Driver              = ODBC for FreeTDS
+Database            = RPT_DWH
+Servername          = SQL-RPT.extensis.com
+UserName            = ro
+Password            = Extensis9
+Port                = 1433
+
+9. In R, run the console command to check if drivers are installed. . .
+odbcListDrivers()
+
+10. run the console command 
+install.packages(&quot;odbc&quot;)
+
+6. Add the following &amp; save
+
+[PostgreSQL Driver]
+Driver          = /usr/local/lib/psqlodbcw.so
+
+[SQLite Driver]
+Driver          = /usr/local/lib/libsqlite3odbc.dylib
+
+[ODBC for FreeTDS]
+Driver          = /usr/local/lib/libtdsodbc.so
+
+7. Find odbc.ini
+sudo find / -name odbc.ini (should be in usr/local/etc/)
+
+nano /usr/local/etc/odbc.ini
+
+8. Add the following &amp; save
+
+[PostgreSQL]
+Driver              = PostgreSQL Driver
+Database            = test_db
+Servername          = localhost
+UserName            = postgres
+Password            = password
+Port                = 5432
+
+[SQLite]
+Driver          = SQLite Driver
+Database=/tmp/testing
+
+[ODBC for FreeTDS]
+Driver              = ODBC for FreeTDS
+Database            = RPT_DWH
+Servername          = SQL-RPT.extensis.com
+UserName            = ro
+Password            = Extensis9
+Port                = 1433
+
+9. In R, run the console command to check if drivers are installed. . .
+odbcListDrivers()
+
+10. run the console command 
+install.packages(&quot;odbc&quot;)</code></pre>
+<p>Test it.</p>
+<p>Thanks to Mike Griffith, our IT ninja guy, who helped me through this process.</p>

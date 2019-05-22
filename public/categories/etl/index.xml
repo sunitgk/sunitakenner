@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ETL on Blog - Sunita Kenner</title>
+    <link>/categories/etl/</link>
+    <description>Recent content in ETL on Blog - Sunita Kenner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/etl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Connect to an SQL Database from RStudio</title>
+      <link>/blog/connect-to-an-sql-database/</link>
+      <pubDate>Sun, 20 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/connect-to-an-sql-database/</guid>
+      <description>The objective of this post is to document how to successfully connect to an SQL database from RStudioIDE user. Follow instructions at rstudio Connect to database.
+1. brew install freetds: &amp;quot;--with-unixodbc has depreciated, not needed&amp;quot; 2. brew install psqlodbc 3. brew install mysql 4. brew install sqliteodbc 5. Find odbcinst.ini sudo find / -name odbcinst.ini (should be in usr/local/etc/) nano /usr/local/etc/odbcinst.ini 6. Add the following &amp;amp; save [PostgreSQL Driver] Driver = /usr/local/lib/psqlodbcw.</description>
+    </item>
+    
+  </channel>
+</rss>
