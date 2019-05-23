@@ -164,5 +164,7 @@ ownmedian(test_vector)
 ownmedian(Pet_US_Stats$`Number in Millions`)
 ```
 
-We'd like to thank Garrett Grolemund @RStudio for all his help in making this class a success, and at RStudio & DataCamp for helping Tara and Ben continue their journey in R with their encouragement and generosity.  Thank you!!
+We are passionate about and love helping all the paws at different shelters!! We will continue to code in `R for Paws` !!
+
+We'd like to thank [Garrett Grolemund](https://twitter.com/statgarrett?lang=en) @RStudio for all his help in making this class a success, and at [RStudio](https://rstudio.com) & DataCamp for helping Tara and Ben continue their journey in R with their encouragement and generosity.  Thank you!!
 
