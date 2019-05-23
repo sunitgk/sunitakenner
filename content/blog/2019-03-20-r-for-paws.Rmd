@@ -18,8 +18,7 @@ With the help of 2 R-Ninja Eighth Graders, [Tara and Ben](https://benaracreation
 
 The 3 key objectives of the **Coding in R: Information Visualized** class:
 
-### Objective 1: 
-Understand and Construct data sets using vectors and tibbles: 
+#### Objective 1: Understand and Construct data sets using vectors and tibbles: 
 
 ```{r, echo = F, message = F, error = F}
 library(tidyverse)
@@ -42,21 +41,19 @@ str(Total_Pets)
 
 ```
 
-Based on Understanding 1, move to reading local excel/csv/rds files.  Data from:
+##### Based on Understanding Objective 1, move to reading local excel/csv/rds files.  Data from:
 ```{r}
-
 Pet_US_Stats <- readxl::read_excel("~/Documents/sunitakenner/Product_Data/Day2_Pet_Data.xlsx")
 
-#Different way you can look at data
+#Different ways you can look at data
 glimpse(Pet_US_Stats)
 
-#Other functions to understand data
-summary(Pet_US_Stats)
+skimr::skim(Pet_US_Stats)
 
 ```
 
 
-### Objective 2: Visualize the dataset using ggplot2/ggplotly
+#### Objective 2: Visualize the dataset using ggplot2
 
 ```{r}
 
@@ -69,7 +66,7 @@ ggplot(Pet_US_Stats) +
 
 ```
 
-facet_wrap() power
+##### The facet_wrap() power
 ```{r}
 ggplot(Pet_US_Stats) + 
   geom_point(aes(x = Year_From, y = `Number in Millions`, color = Pet)) + 
@@ -77,6 +74,7 @@ ggplot(Pet_US_Stats) +
   theme(legend.position = "none")
 ```
 
+##### Visualizing `median`, `range`: The geom_boxplot() power
 ```{r}
 ggplot(Pet_US_Stats) + 
   geom_boxplot(mapping = aes(x = Pet, y = `Number in Millions`, fill = Pet)) +
@@ -84,10 +82,11 @@ ggplot(Pet_US_Stats) +
 ```
 
 
-### Objective 3: Learn the basics of writing functions in R:
+#### Objective 3: Learn the basics of writing functions in R (*mean*, *median*, *range*)
 
-The middle schoolers who attended this class were well acquainted with 'mean', 'range', 'median' and knew the Math for deriving those statistics. Mapping the math to the functions in R as demonstrated below proved to be a fun learning experience for the kids.  They loved it (Please see feedback at the end of the post for the class).  Two middle schoolers volunteered to write their own mean and range functions. 
+The middle schoolers who attended this class were well acquainted with the Math for deriving (`mean`, `median`, `range`). Mapping the math to the functions in R as demonstrated below proved to be a fun learning experience for the kids.  They loved it (Please see feedback at the end of the post for the class)!!!! Two middle schoolers volunteered to write their own mean and range functions. 
 
+##### The `mean` function by Martin (*A 7th Grader*)
 ```{r}
 #Create a numerical vector of length 5
 test_vector <- c(4,5,7,1,6)
@@ -113,8 +112,12 @@ myownmean <- function(numbers) {
 
 myownmean(test_vector)
 
+# Call function on the Pet Data set
+myownmean(Pet_US_Stats$`Number in Millions`)
+
 ```
 
+##### The awesome `range` function written by Manahil (*A 7th grader*)
 ```{r}
 myownrange <- function(numbers) {
   
@@ -127,21 +130,39 @@ myownrange <- function(numbers) {
 
 myownrange(test_vector)
 
+# Call function on the Pet Data set
+myownrange(Pet_US_Stats$`Number in Millions`)
+
 ```
 
-Tara and Ben helped out with the median function. 
+##### Tara and Ben helped out with the median function. 
 
 ```{r}
-Reichweite <- function(x) {
-    Reichweiteresult <- max(x) - min(x)
-    return(Reichweiteresult)
+ownmedian <- function(numbervec){
+  
+  #First sort the given vector of numbers in ascending order
+  sorted_numvec <- sort(numbervec, decreasing = FALSE)
+  
+  #Second, find midpoint of the count of numerical vector
+  half_length = length(numbervec)/2
+  
+  #Second: check if the total length of the numerical vector is even/odd.
+  #If even, take the mean of the two mid elements, else take the mid element
+  if( length(numbervec)%%2 == 0) {
+      median_is = (sorted_numvec[half_length] + sorted_numvec[half_length+1])/2
+  }
+  else {
+    median_is = sorted_numvec[half_length + 1]
+  }
+
+  return(median_is)
 }
 
-Zahlen1 <- c(4,0,5,2,2,8)
+ownmedian(test_vector)
 
-Reichweite(Zahlen1)
+#Call function on the Pet Data set
+ownmedian(Pet_US_Stats$`Number in Millions`)
 ```
-
 
 We'd like to thank Garrett Grolemund @RStudio for all his help in making this class a success, and at RStudio & DataCamp for helping Tara and Ben continue their journey in R with their encouragement and generosity.  Thank you!!
 
