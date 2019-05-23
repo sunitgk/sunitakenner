@@ -16,7 +16,9 @@ linktitle: ''
 type: post
 ---
 
-The objective of this post is to document how to successfully connect to an SQL database from RStudioIDE user.  Follow instructions at [rstudio Connect to database](https://db.rstudio.com/getting-started/connect-to-database/).  
+The objective of this post is to supplement and document the process of connecting to an SQL database from RStudio.  
+
+1.  Follow instructions at [rstudio Connect to database](https://db.rstudio.com/getting-started/connect-to-database/).  
 
 ```{r, eval = F}
 
@@ -25,10 +27,10 @@ The objective of this post is to document how to successfully connect to an SQL 
 3. brew install mysql
 4. brew install sqliteodbc
 5. Find odbcinst.ini
-sudo find / -name odbcinst.ini (should be in usr/local/etc/)
-nano /usr/local/etc/odbcinst.ini
+   sudo find / -name odbcinst.ini (should be in usr/local/etc/)
+   nano /usr/local/etc/odbcinst.ini
 
-6. Add the following & save
+6. Add the following & save:
 
 [PostgreSQL Driver]
 Driver          = /usr/local/lib/psqlodbcw.so
@@ -40,9 +42,8 @@ Driver          = /usr/local/lib/libsqlite3odbc.dylib
 Driver          = /usr/local/lib/libtdsodbc.so
 
 7. Find odbc.ini
-sudo find / -name odbc.ini (should be in usr/local/etc/)
-
-nano /usr/local/etc/odbc.ini
+    sudo find / -name odbc.ini (should be in usr/local/etc/)
+    nano /usr/local/etc/odbc.ini
 
 8. Add the following & save
 
@@ -60,55 +61,11 @@ Database=/tmp/testing
 
 [ODBC for FreeTDS]
 Driver              = ODBC for FreeTDS
-Database            = RPT_DWH
-Servername          = SQL-RPT.extensis.com
-UserName            = ro
-Password            = Extensis9
-Port                = 1433
-
-9. In R, run the console command to check if drivers are installed. . .
-odbcListDrivers()
-
-10. run the console command 
-install.packages("odbc")
-
-6. Add the following & save
-
-[PostgreSQL Driver]
-Driver          = /usr/local/lib/psqlodbcw.so
-
-[SQLite Driver]
-Driver          = /usr/local/lib/libsqlite3odbc.dylib
-
-[ODBC for FreeTDS]
-Driver          = /usr/local/lib/libtdsodbc.so
-
-7. Find odbc.ini
-sudo find / -name odbc.ini (should be in usr/local/etc/)
-
-nano /usr/local/etc/odbc.ini
-
-8. Add the following & save
-
-[PostgreSQL]
-Driver              = PostgreSQL Driver
-Database            = test_db
-Servername          = localhost
-UserName            = postgres
-Password            = password
-Port                = 5432
-
-[SQLite]
-Driver          = SQLite Driver
-Database=/tmp/testing
-
-[ODBC for FreeTDS]
-Driver              = ODBC for FreeTDS
-Database            = RPT_DWH
-Servername          = SQL-RPT.extensis.com
-UserName            = ro
-Password            = Extensis9
-Port                = 1433
+Database            = nameofthedatabase
+Servername          = nameofserver.com
+UserName            = username
+Password            = passwd
+Port                = Portnumber
 
 9. In R, run the console command to check if drivers are installed. . .
 odbcListDrivers()
@@ -117,11 +74,36 @@ odbcListDrivers()
 install.packages("odbc")
 
 ```
-
 
 Test it.
-```{r}
+```{r, eval = F}
+#Load required libraries
+library(odbc)
+library(DBI)
+library(dplyr)
+
+#Define Connection
+myconnection <- DBI::dbConnect(odbc::odbc(),
+                 driver = "libtdsodbc.so",
+                 server = "Server Name",
+                 database = "Database name",
+                 UID = "userid",
+                 Pwd = "passwd",
+                 port = 1433)
 
 ```
+
+Define an sql chunk and run SQL queries in R-markdown using: **{sql, connection = myconnection, output.var = "nameoftheoutputfile"}**
+
+```{r,  eval = F}
+
+SELECT *, 
+      convert(INT, DATENAME(YEAR, DATEADD(month, 6, First_Pur_Date))) FY_FirstPurchase,
+      convert(INT, DATENAME(YEAR, DATEADD(month, 6, MaxMED))) FY_EMaintD,
+      convert(INT, MONTH(First_Pur_Date)) Month_FirstPurch
+FROM "databasename"."tablename"."dataset"
+
+```
+
 
 Thanks to Mike Griffith, our IT ninja guy, who helped me through this process. 

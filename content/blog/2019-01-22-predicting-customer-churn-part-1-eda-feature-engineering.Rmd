@@ -24,7 +24,7 @@ Once the selected raw data is preprocessed, my first step towards the analysis s
 1.  Product 1: Quantitative Segmentation of our customers:  Who are they? 
 2.  Product 2: Context-based Features to feed/help our predictive model: Which customers based on those features are likely to churn?
 
-The output of the Analysis is available as an incremental shiny app [here](https://busaanalytics.shinyapps.io/Churn_Blog_App/)
+The output of the Analysis is available as an incremental shiny app [here](https://busaanalytics.shinyapps.io/Blog_ProductChurn_App/)
 
 
 ### 2 notable feature engineering quotes. 
