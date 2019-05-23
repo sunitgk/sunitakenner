@@ -24,7 +24,7 @@
         "datePublished": "2019-03-20 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-03-20 00:00:00 &#43;0000 UTC",
         "url" : "/blog/r-for-paws/",
-        "wordCount" : "721",
+        "wordCount" : "872",
         "keywords" : [ "Blog" ]
     }
     </script>
@@ -71,7 +71,7 @@
 
 <meta itemprop="datePublished" content="2019-03-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="721">
+<meta itemprop="wordCount" content="872">
 
 
 
@@ -452,9 +452,8 @@
 
 <p>With the help of 2 R-Ninja Eighth Graders, <a href="https://benaracreations2015.shinyapps.io/gr5project/">Tara and Ben</a> who have been <em>R-ing</em> since they were 5th graders, I recently taught <strong>Coding in R: Information Visualized</strong> class (Feb 23rd - March 2019) to Middle Graders (Grades 6-8) for <a href="https://www.saturdayacademy.org/">Saturday Academy, a non-profit organisation</a>. We donated all proceeds from teaching the class to <a href="https://www.familydogsnewlife.org/">Family Dog Shelter, Portland, OR</a> and <a href="https://www.oregonhumane.org/">Oregon Humane Society, Portland, OR</a>, and we will continue to <strong>R for Paws</strong> by donating all proceeds from teaching R to animal shelters.</p>
 <p>The 3 key objectives of the <strong>Coding in R: Information Visualized</strong> class:</p>
-<div id="objective-1" class="section level3">
-<h3>Objective 1:</h3>
-<p>Understand and Construct data sets using vectors and tibbles:</p>
+<div id="objective-1-understand-and-construct-data-sets-using-vectors-and-tibbles" class="section level4">
+<h4>Objective 1: Understand and Construct data sets using vectors and tibbles:</h4>
 <pre class="r"><code>Type_of_Pets &lt;- c(&quot;Freshwater_Fish&quot;, &quot;Cat&quot;, &quot;Dog&quot;, &quot;Bird&quot;, 
                   &quot;Saltwater fish&quot;, &quot;small animal&quot;, &quot;Reptile&quot;, &quot;Horse&quot;) 
 Number_of_Pets &lt;- c(139.3, 94.2, 89.7, 20.3, 
@@ -479,10 +478,11 @@ str(Total_Pets)</code></pre>
 <pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    8 obs. of  2 variables:
 ##  $ Type_of_Pets  : chr  &quot;Freshwater_Fish&quot; &quot;Cat&quot; &quot;Dog&quot; &quot;Bird&quot; ...
 ##  $ Number_of_Pets: num  139.3 94.2 89.7 20.3 18.8 ...</code></pre>
-<p>Based on Understanding 1, move to reading local excel/csv/rds files. Data from:</p>
+<div id="based-on-understanding-objective-1-move-to-reading-local-excelcsvrds-files.-data-from" class="section level5">
+<h5>Based on Understanding Objective 1, move to reading local excel/csv/rds files. Data from:</h5>
 <pre class="r"><code>Pet_US_Stats &lt;- readxl::read_excel(&quot;~/Documents/sunitakenner/Product_Data/Day2_Pet_Data.xlsx&quot;)
 
-#Different way you can look at data
+#Different ways you can look at data
 glimpse(Pet_US_Stats)</code></pre>
 <pre><code>## Observations: 32
 ## Variables: 5
@@ -491,25 +491,31 @@ glimpse(Pet_US_Stats)</code></pre>
 ## $ `Households that Own` &lt;dbl&gt; 12.5, 47.1, 60.2, 7.9, 2.5, 6.7, 4.7, 2.6,…
 ## $ Year_From             &lt;dttm&gt; 2017-01-01, 2017-01-01, 2017-01-01, 2017-…
 ## $ Year_To               &lt;dttm&gt; 2018-01-01, 2018-01-01, 2018-01-01, 2018-…</code></pre>
-<pre class="r"><code>#Other functions to understand data
-summary(Pet_US_Stats)</code></pre>
-<pre><code>##      Pet            Number in Millions Households that Own
-##  Length:32          Min.   :  7.50     Min.   : 0.70      
-##  Class :character   1st Qu.: 11.00     1st Qu.: 4.15      
-##  Mode  :character   Median : 17.15     Median : 6.40      
-##                     Mean   : 46.21     Mean   :16.56      
-##                     3rd Qu.: 85.95     3rd Qu.:20.45      
-##                     Max.   :151.10     Max.   :60.20      
-##    Year_From                      Year_To                   
-##  Min.   :2011-01-01 00:00:00   Min.   :2012-01-01 00:00:00  
-##  1st Qu.:2012-07-02 06:00:00   1st Qu.:2013-07-02 06:00:00  
-##  Median :2014-01-01 00:00:00   Median :2015-01-01 00:00:00  
-##  Mean   :2014-01-01 00:00:00   Mean   :2015-01-01 00:00:00  
-##  3rd Qu.:2015-07-02 18:00:00   3rd Qu.:2016-07-01 18:00:00  
-##  Max.   :2017-01-01 00:00:00   Max.   :2018-01-01 00:00:00</code></pre>
+<pre class="r"><code>skimr::skim(Pet_US_Stats)</code></pre>
+<pre><code>## Skim summary statistics
+##  n obs: 32 
+##  n variables: 5 
+## 
+## ── Variable type:character ──────────────────────────────────────────────────────────────────────────────
+##  variable missing complete  n min max empty n_unique
+##       Pet       0       32 32   3  15     0        9
+## 
+## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────────
+##             variable missing complete  n  mean    sd  p0   p25   p50   p75
+##  Households that Own       0       32 32 16.56 19.6  0.7  4.15  6.4  20.45
+##   Number in Millions       0       32 32 46.21 46.73 7.5 11    17.15 85.95
+##   p100     hist
+##   60.2 ▇▂▁▁▁▁▁▁
+##  151.1 ▇▁▁▁▃▁▁▁
+## 
+## ── Variable type:POSIXct ────────────────────────────────────────────────────────────────────────────────
+##   variable missing complete  n        min        max     median n_unique
+##  Year_From       0       32 32 2011-01-01 2017-01-01 2014-01-01        4
+##    Year_To       0       32 32 2012-01-01 2018-01-01 2015-01-01        4</code></pre>
 </div>
-<div id="objective-2-visualize-the-dataset-using-ggplot2ggplotly" class="section level3">
-<h3>Objective 2: Visualize the dataset using ggplot2/ggplotly</h3>
+</div>
+<div id="objective-2-visualize-the-dataset-using-ggplot2" class="section level4">
+<h4>Objective 2: Visualize the dataset using ggplot2</h4>
 <pre class="r"><code>ggplot(Pet_US_Stats) + 
   geom_col(mapping = aes(x =Year_From , 
                          y = `Number in Millions`, 
@@ -517,20 +523,27 @@ summary(Pet_US_Stats)</code></pre>
                          position = &quot;dodge&quot;) + 
   scale_fill_brewer()</code></pre>
 <p><img src="../../blog/2019-03-20-r-for-paws_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>facet_wrap() power</p>
+<div id="the-facet_wrap-power" class="section level5">
+<h5>The facet_wrap() power</h5>
 <pre class="r"><code>ggplot(Pet_US_Stats) + 
   geom_point(aes(x = Year_From, y = `Number in Millions`, color = Pet)) + 
   facet_wrap(~Pet) + 
   theme(legend.position = &quot;none&quot;)</code></pre>
 <p><img src="../../blog/2019-03-20-r-for-paws_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="visualizing-median-range-the-geom_boxplot-power" class="section level5">
+<h5>Visualizing <code>median</code>, <code>range</code>: The geom_boxplot() power</h5>
 <pre class="r"><code>ggplot(Pet_US_Stats) + 
   geom_boxplot(mapping = aes(x = Pet, y = `Number in Millions`, fill = Pet)) +
   theme(legend.position = &quot;none&quot;)</code></pre>
 <p><img src="../../blog/2019-03-20-r-for-paws_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
-<div id="objective-3-learn-the-basics-of-writing-functions-in-r" class="section level3">
-<h3>Objective 3: Learn the basics of writing functions in R:</h3>
-<p>The middle schoolers who attended this class were well acquainted with ‘mean’, ‘range’, ‘median’ and knew the Math for deriving those statistics. Mapping the math to the functions in R as demonstrated below proved to be a fun learning experience for the kids. They loved it (Please see feedback at the end of the post for the class). Two middle schoolers volunteered to write their own mean and range functions.</p>
+</div>
+<div id="objective-3-learn-the-basics-of-writing-functions-in-r-mean-median-range" class="section level4">
+<h4>Objective 3: Learn the basics of writing functions in R (<em>mean</em>, <em>median</em>, <em>range</em>)</h4>
+<p>The middle schoolers who attended this class were well acquainted with the Math for deriving (<code>mean</code>, <code>median</code>, <code>range</code>). Mapping the math to the functions in R as demonstrated below proved to be a fun learning experience for the kids. They loved it (Please see feedback at the end of the post for the class)!!!! Two middle schoolers volunteered to write their own mean and range functions.</p>
+<div id="the-mean-function-by-martin-a-7th-grader" class="section level5">
+<h5>The <code>mean</code> function by Martin (<em>A 7th Grader</em>)</h5>
 <pre class="r"><code>#Create a numerical vector of length 5
 test_vector &lt;- c(4,5,7,1,6)
 
@@ -555,6 +568,12 @@ myownmean &lt;- function(numbers) {
 
 myownmean(test_vector)</code></pre>
 <pre><code>## [1] 4.6</code></pre>
+<pre class="r"><code># Call function on the Pet Data set
+myownmean(Pet_US_Stats$`Number in Millions`)</code></pre>
+<pre><code>## [1] 46.2125</code></pre>
+</div>
+<div id="the-awesome-range-function-written-by-manahil-a-7th-grader" class="section level5">
+<h5>The awesome <code>range</code> function written by Manahil (<em>A 7th grader</em>)</h5>
 <pre class="r"><code>myownrange &lt;- function(numbers) {
   
   smallest_number &lt;- min(numbers)
@@ -566,17 +585,39 @@ myownmean(test_vector)</code></pre>
 
 myownrange(test_vector)</code></pre>
 <pre><code>## [1] 6</code></pre>
-<p>Tara and Ben helped out with the median function.</p>
-<pre class="r"><code>Reichweite &lt;- function(x) {
-    Reichweiteresult &lt;- max(x) - min(x)
-    return(Reichweiteresult)
+<pre class="r"><code># Call function on the Pet Data set
+myownrange(Pet_US_Stats$`Number in Millions`)</code></pre>
+<pre><code>## [1] 143.6</code></pre>
+</div>
+<div id="tara-and-ben-helped-out-with-the-median-function." class="section level5">
+<h5>Tara and Ben helped out with the median function.</h5>
+<pre class="r"><code>ownmedian &lt;- function(numbervec){
+  
+  #First sort the given vector of numbers in ascending order
+  sorted_numvec &lt;- sort(numbervec, decreasing = FALSE)
+  
+  #Second, find midpoint of the count of numerical vector
+  half_length = length(numbervec)/2
+  
+  #Second: check if the total length of the numerical vector is even/odd.
+  #If even, take the mean of the two mid elements, else take the mid element
+  if( length(numbervec)%%2 == 0) {
+      median_is = (sorted_numvec[half_length] + sorted_numvec[half_length+1])/2
+  }
+  else {
+    median_is = sorted_numvec[half_length + 1]
+  }
+
+  return(median_is)
 }
 
-Zahlen1 &lt;- c(4,0,5,2,2,8)
-
-Reichweite(Zahlen1)</code></pre>
-<pre><code>## [1] 8</code></pre>
+ownmedian(test_vector)</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>#Call function on the Pet Data set
+ownmedian(Pet_US_Stats$`Number in Millions`)</code></pre>
+<pre><code>## [1] 17.15</code></pre>
 <p>We’d like to thank Garrett Grolemund <span class="citation">@RStudio</span> for all his help in making this class a success, and at RStudio &amp; DataCamp for helping Tara and Ben continue their journey in R with their encouragement and generosity. Thank you!!</p>
+</div>
 </div>
 
   </div>
