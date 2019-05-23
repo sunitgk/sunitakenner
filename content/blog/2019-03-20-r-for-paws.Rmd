@@ -5,11 +5,14 @@ date: '2019-03-20'
 slug: r-for-paws
 categories:
   - Teaching
-tags: []
+tags: 
+- R
+  - ggplot
+  - Beginner Functions
 description: ''
-featured: ''
-featuredalt: ''
-featuredpath: ''
+featured: 'Prince1.png'
+featuredalt: 'princenubu'
+featuredpath: 'date'
 linktitle: ''
 type: post
 ---
