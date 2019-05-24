@@ -1,0 +1,23 @@
+---
+title: Churn Analytics ShinyMaterial App
+author: Sunita Kenner
+date: '2019-04-23'
+slug: churn-analytics-shiny-app
+categories:
+  - Business Science
+tags:
+  - shinyapp
+  - shiny material
+description: ''
+featured: 'churnapp.png'
+featuredalt: 'churnapp'
+featuredpath: 'date'
+linktitle: ''
+type: post
+---
+
+I had fun building the [Churn Analytics shinymaterial application](https://busaanalytics.shinyapps.io/Blog_ProductChurn_App/) by using [Eric Andersen's](https://ericrayanderson.github.io/shinymaterial/) shinymaterial package. This is a fantastic package(Thank you Eric) that enables shiny developers like me implement Material Design using R code; more about it [here](https://rviews.rstudio.com/2018/03/13/alternative-design-for-shiny/). 
+
+The app is a final product of the Churn analysis project at work, and as always a great learning experience!!
+
+
