@@ -19,4 +19,93 @@ type: post
 
 
 <p>I had fun building the <a href="https://busaanalytics.shinyapps.io/Blog_ProductChurn_App/">Churn Analytics shinymaterial application</a> by using <a href="https://ericrayanderson.github.io/shinymaterial/">Eric Andersen’s</a> shinymaterial package. This is a fantastic package(Thank you Eric) that enables shiny developers like me implement Material Design using R code; more about it <a href="https://rviews.rstudio.com/2018/03/13/alternative-design-for-shiny/">here</a>.</p>
-<p>The app is a final product of the Churn analysis project at work, and as always a great learning experience!!</p>
+<p>The app is a final product of the Churn Analytics project at work (Also Please see: <a href="https://www.sgkenner.com/blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn 1</a>; code chunks as examples of actual UI and Server pieces of the app.</p>
+<pre class="r"><code>#
+# UI Material Shiny app code for side_nav_tab_content
+#
+
+ material_side_nav_tab_content(
+
+    side_nav_tab_id = &quot;churn&quot;,
+
+    tags$br(),
+
+    material_row(
+      material_column(
+        width   = 2,
+        material_card(
+          title = &quot;&quot;,
+          depth = 4,
+          material_dropdown(
+            input_id = &quot;Churn_select&quot;,
+            label    = &quot;Select Churn Vs&quot;,
+            choices  = c(
+              &quot;Region&quot;           = &quot;Region&quot;,
+              &quot;Industry&quot;         = &quot;Industry&quot;,
+              &quot;Xtra_Feature&quot;     = &quot;Xtra_feature&quot;,
+              &quot;Monthly Cohort&quot;   = &quot;Monthly_Cohort&quot;,
+              &quot;Auto Renew&quot;       = &quot;AutoRenew&quot;,
+              &quot;Frequency&quot;        = &quot;Frequency&quot;,
+              &quot;Recency&quot;          = &quot;Recency&quot;,
+              &quot;Tenure Days&quot;      = &quot;Tenure_Days_bin&quot;,
+              &quot;ProductUsage1&quot;    = &quot;Produse1&quot;,
+              &quot;App Launches&quot;     = &quot;general_app_num_launches&quot;,
+              &quot;SeatRange Bin&quot;    = &quot;seats_total_bin&quot;
+            ),
+
+            selected = &quot;Region&quot;
+          ),
+
+          tags$br(),
+
+          material_row(
+            material_column(
+              width = 5,
+              material_radio_button(
+                input_id = &quot;churn_metric&quot;,
+                label    = &quot;Customer # By&quot;,
+                choices  = c(&quot;Count&quot;  = &quot;number&quot;,
+                            &quot;Dollars&quot; = &quot;dollars&quot;)
+              )
+            )
+          ),
+
+          material_row(
+            material_column(
+              width  = 5,
+              offset = 0 ,
+
+              material_checkbox(
+                input_id      = &quot;churn_percent&quot;,
+                label         = &quot;Percent&quot;,
+                initial_value = FALSE,
+                color         = &quot;#4caf50&quot;
+              )
+            )
+          ),
+
+          tags$br(),
+
+          material_row(
+            material_column(
+              width      = 5,
+              material_switch(
+                input_id      = &quot;churn_clients&quot;,
+                label         = &quot;Churn Seats&quot;,
+                initial_value = TRUE,
+                color         = my_col$Churn_Clients)
+
+            ),
+
+            material_column(
+              width = 5,
+              material_switch(
+                input_id      = &quot;churn_customers&quot;,
+                label         = &quot;Churn CustNo&quot;,
+                initial_value = TRUE,
+                color         = my_col$Churn_Customers)
+
+            )
+          )
+        )
+      ),</code></pre>
