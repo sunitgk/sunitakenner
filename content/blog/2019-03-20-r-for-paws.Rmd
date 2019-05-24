@@ -19,6 +19,8 @@ type: post
 
 With the help of 2 R-Ninja Eighth Graders, [Tara and Ben](https://benaracreations2015.shinyapps.io/gr5project/) who have been *R-ing* since they were 5th graders, I recently taught **Coding in R: Information Visualized** class (Feb 23rd - March 2019) to Middle Graders (Grades 6-8) for [Saturday Academy, a non-profit organisation](https://www.saturdayacademy.org/). We donated all proceeds from teaching the class to [Family Dog Shelter, Portland, OR](https://www.familydogsnewlife.org/) and [Oregon Humane Society, Portland, OR](https://www.oregonhumane.org/), and we will continue to **R for Paws** by donating all proceeds from teaching R to animal shelters.
 
+Here's a brief of what we taught, and I should have the entire class materials posted on github by end of June 2019.
+
 The 3 key objectives of the **Coding in R: Information Visualized** class:
 
 #### Objective 1: Understand and Construct data sets using vectors and tibbles: 
