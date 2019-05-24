@@ -34,47 +34,6 @@ type: post
 <blockquote>
 <p>Coming up with features is difficult, time-consuming, and requires expert knowledge. ‘Applied machine learning’ is basically feature engineering — Andrew Ng</p>
 </blockquote>
-<pre><code>## digest (0.6.18  -&gt; 0.6.19) [CRAN]
-## dplyr  (0.8.0.1 -&gt; 0.8.1 ) [CRAN]
-## pillar (1.3.1   -&gt; 1.4.0 ) [CRAN]
-## vctrs  (NA      -&gt; 0.1.0 ) [CRAN]
-## 
-## The downloaded binary packages are in
-##  /var/folders/tb/_j8l53t95t961jjjk7tbdhtm0000gq/T//RtmpLo3Njt/downloaded_packages
-##   
-   checking for file ‘/private/var/folders/tb/_j8l53t95t961jjjk7tbdhtm0000gq/T/RtmpLo3Njt/remotes1b5b3e542863/jbkunst-highcharter-b225beb/DESCRIPTION’ ...
-  
-✔  checking for file ‘/private/var/folders/tb/_j8l53t95t961jjjk7tbdhtm0000gq/T/RtmpLo3Njt/remotes1b5b3e542863/jbkunst-highcharter-b225beb/DESCRIPTION’
-## 
-  
-─  preparing ‘highcharter’:
-## 
-  
-   checking DESCRIPTION meta-information ...
-  
-✔  checking DESCRIPTION meta-information
-## 
-  
-─  checking for LF line-endings in source and make files and shell scripts
-## 
-  
-─  checking for empty or unneeded directories
-## 
-  
-   Removed empty directory ‘highcharter/dev’
-## 
-  
-   Removed empty directory ‘highcharter/tests’
-## 
-  
-─  looking to see if a ‘data/datalist’ file should be added
-## 
-  
-─  building ‘highcharter_0.7.0.9000.tar.gz’
-## 
-  
-   
-## </code></pre>
 </div>
 <div id="part-1-feature-engineering" class="section level3">
 <h3>Part 1: Feature Engineering</h3>
@@ -88,7 +47,7 @@ type: post
 ##  n obs: 5195 
 ##  n variables: 12 
 ## 
-## ── Variable type:character ──────────────────────────────────────────────────────────────────────────────
+## ── Variable type:character ─────────────────────────────────────────────────────────────────────────
 ##        variable missing complete    n min max empty n_unique
 ##    Feature_Xtra       0     5195 5195   2   9     0        3
 ##        Industry       0     5195 5195  10  10     0       12
@@ -97,11 +56,11 @@ type: post
 ##    Sales Person       0     5195 5195   6   8     0        7
 ##    Ship Country       0     5195 5195   5  24     0       55
 ## 
-## ── Variable type:Date ───────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:Date ──────────────────────────────────────────────────────────────────────────────
 ##   variable missing complete    n        min        max     median n_unique
 ##  Cal.Month       0     5195 5195 2016-07-01 2018-07-01 2017-09-01       25
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ───────────────────────────────────────────────────────────────────────────
 ##   variable missing complete    n   mean     sd   p0 p25 p50 p75 p100
 ##        ASP       0     5195 5195  10.17   3.07   -5   9  12  12   14
 ##  Total_Amt       0     5195 5195 223.79 345.5  -172  96 144 240 9000
@@ -111,7 +70,7 @@ type: post
 ##  ▇▁▁▁▁▁▁▁
 ##  ▇▁▁▁▁▁▁▁
 ## 
-## ── Variable type:POSIXct ────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:POSIXct ───────────────────────────────────────────────────────────────────────────
 ##        variable missing complete    n        min        max     median
 ##  Maint End Date       0     5195 5195 2016-07-21 2019-09-13 2018-08-23
 ##           Month       0     5195 5195 2016-07-01 2018-07-01 2017-09-01
@@ -145,7 +104,7 @@ glimpse(Feature_engineered_set1)</code></pre>
 ## $ Total_Qty        &lt;dbl&gt; 4, 4, 16, 4, 4, 8, 12, 8, 4, 4, 16, 4, 20, 36, …
 ## $ ASP              &lt;dbl&gt; 2, 10, 12, 9, 10, 12, 8, 12, 8, 8, 9, 10, 12, 1…
 ## $ Feature_Xtra     &lt;chr&gt; &quot;Feature_1&quot;, &quot;Feature_1&quot;, &quot;Feature_1&quot;, &quot;Feature…
-## $ quarter_year     &lt;S3: yearqtr&gt; 2017 Q1, 2017 Q1, 2017 Q1, 2017 Q1, 201…
+## $ quarter_year     &lt;yearqtr&gt; 2017 Q1, 2017 Q1, 2017 Q1, 2017 Q1, 2017 Q1…
 ## $ Year             &lt;dbl&gt; 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017,…
 ## $ FY               &lt;dbl&gt; 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017,…
 ## $ Month_Purchased  &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
