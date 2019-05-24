@@ -83,7 +83,7 @@ library(skimr)
 library(GGally)
 library(RColorBrewer)
 
-devtools::install_github("jbkunst/highcharter")
+#devtools::install_github("jbkunst/highcharter")
 library(highcharter)
 library(zoo)
 library(lubridate)
