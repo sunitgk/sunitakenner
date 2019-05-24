@@ -82,7 +82,7 @@ library(corrr)
 library(skimr)
 library(GGally)
 library(RColorBrewer)
-
+# Remove so it does not cause error messages
 #devtools::install_github("jbkunst/highcharter")
 library(highcharter)
 library(zoo)
