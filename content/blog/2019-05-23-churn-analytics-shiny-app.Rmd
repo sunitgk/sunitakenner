@@ -18,6 +18,101 @@ type: post
 
 I had fun building the [Churn Analytics shinymaterial application](https://busaanalytics.shinyapps.io/Blog_ProductChurn_App/) by using [Eric Andersen's](https://ericrayanderson.github.io/shinymaterial/) shinymaterial package. This is a fantastic package(Thank you Eric) that enables shiny developers like me implement Material Design using R code; more about it [here](https://rviews.rstudio.com/2018/03/13/alternative-design-for-shiny/). 
 
-The app is a final product of the Churn analysis project at work, and as always a great learning experience!!
+The app is a final product of the Churn Analytics project at work (Also Please see: [Predicting Customer Churn 1](https://www.sgkenner.com/blog/predicting-customer-churn-part-1-eda-feature-engineering/); code chunks as examples of actual UI and Server pieces of the app.
+
+```{r, eval = F}
+
+#
+# UI Material Shiny app code for side_nav_tab_content
+#
+
+ material_side_nav_tab_content(
+
+    side_nav_tab_id = "churn",
+
+    tags$br(),
+
+    material_row(
+      material_column(
+        width   = 2,
+        material_card(
+          title = "",
+          depth = 4,
+          material_dropdown(
+            input_id = "Churn_select",
+            label    = "Select Churn Vs",
+            choices  = c(
+              "Region"           = "Region",
+              "Industry"         = "Industry",
+              "Xtra_Feature"     = "Xtra_feature",
+              "Monthly Cohort"   = "Monthly_Cohort",
+              "Auto Renew"       = "AutoRenew",
+              "Frequency"        = "Frequency",
+              "Recency"          = "Recency",
+              "Tenure Days"      = "Tenure_Days_bin",
+              "ProductUsage1"    = "Produse1",
+              "App Launches"     = "general_app_num_launches",
+              "SeatRange Bin"    = "seats_total_bin"
+            ),
+
+            selected = "Region"
+          ),
+
+          tags$br(),
+
+          material_row(
+            material_column(
+              width = 5,
+              material_radio_button(
+                input_id = "churn_metric",
+                label    = "Customer # By",
+                choices  = c("Count"  = "number",
+                            "Dollars" = "dollars")
+              )
+            )
+          ),
+
+          material_row(
+            material_column(
+              width  = 5,
+              offset = 0 ,
+
+              material_checkbox(
+                input_id      = "churn_percent",
+                label         = "Percent",
+                initial_value = FALSE,
+                color         = "#4caf50"
+              )
+            )
+          ),
+
+          tags$br(),
+
+          material_row(
+            material_column(
+              width      = 5,
+              material_switch(
+                input_id      = "churn_clients",
+                label         = "Churn Seats",
+                initial_value = TRUE,
+                color         = my_col$Churn_Clients)
+
+            ),
+
+            material_column(
+              width = 5,
+              material_switch(
+                input_id      = "churn_customers",
+                label         = "Churn CustNo",
+                initial_value = TRUE,
+                color         = my_col$Churn_Customers)
+
+            )
+          )
+        )
+      ),
+
+```
+
 
 
