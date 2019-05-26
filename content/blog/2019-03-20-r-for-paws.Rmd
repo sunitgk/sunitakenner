@@ -1,5 +1,5 @@
 ---
-title: R for “paws"
+title: R for "Paws"
 author: Sunita Kenner
 date: '2019-03-20'
 slug: r-for-paws

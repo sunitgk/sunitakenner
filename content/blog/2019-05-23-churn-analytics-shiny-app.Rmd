@@ -16,7 +16,7 @@ linktitle: ''
 type: post
 ---
 
-I had fun building the [Churn Analytics shinymaterial application](https://busaanalytics.shinyapps.io/Blog_ProductChurn_App/) by using [Eric Andersen's](https://ericrayanderson.github.io/shinymaterial/) shinymaterial package. This is a fantastic package(Thank you Eric) that enables shiny developers like me implement Material Design using R code; more about it [here](https://rviews.rstudio.com/2018/03/13/alternative-design-for-shiny/). 
+I had fun building the [Churn Analytics shinymaterial application](https://busaanalytics.shinyapps.io/Blog_ProductChurn_App1/) by using [Eric Andersen's](https://ericrayanderson.github.io/shinymaterial/) shinymaterial package. This is a fantastic package(Thank you Eric) that enables shiny developers like me implement Material Design using R code; more about it [here](https://rviews.rstudio.com/2018/03/13/alternative-design-for-shiny/). 
 
 The app is a final product of the Churn Analytics project at work (Also Please see: [Predicting Customer Churn 1](https://www.sgkenner.com/blog/predicting-customer-churn-part-1-eda-feature-engineering/); code chunks as examples of actual UI and Server pieces of the app.
 
