@@ -21,7 +21,7 @@ The objective of this post is to:
 1.  Supplement and document the process of connecting to an SQL database from RStudio via ODBC.  
 2.  Show how SQL queries can be executed directly from RStudio
 
-The best resource to start Follow instructions at [rstudio Connect to database](https://db.rstudio.com/getting-started/connect-to-database/).  
+The best resource to start: Follow instructions at [rstudio Connect to database](https://db.rstudio.com/getting-started/connect-to-database/).  
 
 ```{r, eval = F}
 
