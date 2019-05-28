@@ -16,9 +16,12 @@ linktitle: ''
 type: post
 ---
 
-The objective of this post is to supplement and document the process of connecting to an SQL database from RStudio.  
+The objective of this post is to:
 
-1.  Follow instructions at [rstudio Connect to database](https://db.rstudio.com/getting-started/connect-to-database/).  
+1.  Supplement and document the process of connecting to an SQL database from RStudio via ODBC.  
+2.  Show how SQL queries can be executed directly from RStudio
+
+The best resource to start Follow instructions at [rstudio Connect to database](https://db.rstudio.com/getting-started/connect-to-database/).  
 
 ```{r, eval = F}
 
@@ -75,12 +78,12 @@ install.packages("odbc")
 
 ```
 
-Test it.
+Test it. Install the required libraries; details @Yihui's book on rmarkdown: chapter [Other language engines](https://bookdown.org/yihui/rmarkdown/language-engines.html).  First establish a connection to a database using `DBI::dbConnect() function`. 
 ```{r, eval = F}
 #Load required libraries
 library(odbc)
 library(DBI)
-library(dplyr)
+library(tidyverse)
 
 #Define Connection
 myconnection <- DBI::dbConnect(odbc::odbc(),
@@ -92,6 +95,10 @@ myconnection <- DBI::dbConnect(odbc::odbc(),
                  port = 1433)
 
 ```
+
+The established/defined connection can be accessed via the Connections pane in Rstudio.
+
+![connections_pane](/img/2019/01/blankoutscreenshot.png) 
 
 Define an sql chunk and run SQL queries in R-markdown using: **{sql, connection = myconnection, output.var = "nameoftheoutputfile"}**
 
@@ -105,5 +112,25 @@ FROM "databasename"."tablename"."dataset"
 
 ```
 
+Use SQL query similar to `case_when` in R 
+```{r, eval = F}
+SELECT *, 
+case 
+    when Churn = 'No' AND First_Purchase > 1825 AND First_Purchase < f.fpur then '5+ Years Active'
+    when Churn = 'No' AND First_Purchase > 1460 AND First_Purchase < 1824 then '4+ Years Active'
+    when Churn = 'No' AND First_Purchase > 1095 AND First_Purchase < 1459 then '3+ Years Active'
+    when Churn = 'No' AND First_Purchase >730 AND First_Purchase <1094 then '2+ Years Active'
+    when Churn = 'No' AND First_Purchase >365 AND First_Purchase <729 then '1+ Years Active'
+    when Churn = 'No' AND First_Purchase <365 then 'New Active'
+    else 'Inactive' 
+    end segment
 
-Thanks to Mike Griffith, our IT ninja guy, who helped me through this process. 
+FROM table.Prod_Churn c inner join (select SystemId, 
+                                    max(First_Pur_Date) fpur from table.Prod_Churn 
+                                    GROUP by SystemID) f on f.SystemID=c.SystemID
+WHERE Product = 'name_of_product'
+
+```
+
+
+Thanks to [Mike Griffith](https://www.linkedin.com/in/mikeegriffith/), our IT ninja guy, and Greg Lee (SQL Ninja) who helped me through this process. 
