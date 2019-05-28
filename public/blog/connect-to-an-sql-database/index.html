@@ -13,8 +13,10 @@
         "articleSection" : "blog",
         "name" : "Connect to an SQL Database from RStudio",
         "headline" : "Connect to an SQL Database from RStudio",
-        "description" : "The objective of this post is to document how to successfully connect to an SQL database from RStudioIDE user. Follow instructions at rstudio Connect to database.
-1. brew install freetds: &quot;--with-unixodbc has depreciated, not needed&quot; 2. brew install psqlodbc 3. brew install mysql 4. brew install sqliteodbc 5. Find odbcinst.ini sudo find / -name odbcinst.ini (should be in usr/local/etc/) nano /usr/local/etc/odbcinst.ini 6. Add the following &amp; save [PostgreSQL Driver] Driver = /usr/local/lib/psqlodbcw.",
+        "description" : "The objective of this post is to:
+Supplement and document the process of connecting to an SQL database from RStudio via ODBC.
+ Show how SQL queries can be executed directly from RStudio  The best resource to start Follow instructions at rstudio Connect to database.
+1. brew install freetds: &quot;--with-unixodbc has depreciated, not needed&quot; 2. brew install psqlodbc 3. brew install mysql 4. brew install sqliteodbc 5. Find odbcinst.",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -25,7 +27,7 @@
         "datePublished": "2019-01-20 00:00:00 &#43;0000 UTC",
         "dateModified" : "2019-01-20 00:00:00 &#43;0000 UTC",
         "url" : "/blog/connect-to-an-sql-database/",
-        "wordCount" : "303",
+        "wordCount" : "439",
         "keywords" : [ "odbc","Dbi","Blog" ]
     }
     </script>
@@ -52,12 +54,16 @@
 
         <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Connect to an SQL Database from RStudio"/>
-<meta name="twitter:description" content="The objective of this post is to document how to successfully connect to an SQL database from RStudioIDE user. Follow instructions at rstudio Connect to database.
-1. brew install freetds: &quot;--with-unixodbc has depreciated, not needed&quot; 2. brew install psqlodbc 3. brew install mysql 4. brew install sqliteodbc 5. Find odbcinst.ini sudo find / -name odbcinst.ini (should be in usr/local/etc/) nano /usr/local/etc/odbcinst.ini 6. Add the following &amp; save [PostgreSQL Driver] Driver = /usr/local/lib/psqlodbcw."/>
+<meta name="twitter:description" content="The objective of this post is to:
+Supplement and document the process of connecting to an SQL database from RStudio via ODBC.
+ Show how SQL queries can be executed directly from RStudio  The best resource to start Follow instructions at rstudio Connect to database.
+1. brew install freetds: &quot;--with-unixodbc has depreciated, not needed&quot; 2. brew install psqlodbc 3. brew install mysql 4. brew install sqliteodbc 5. Find odbcinst."/>
 
         <meta property="og:title" content="Connect to an SQL Database from RStudio" />
-<meta property="og:description" content="The objective of this post is to document how to successfully connect to an SQL database from RStudioIDE user. Follow instructions at rstudio Connect to database.
-1. brew install freetds: &quot;--with-unixodbc has depreciated, not needed&quot; 2. brew install psqlodbc 3. brew install mysql 4. brew install sqliteodbc 5. Find odbcinst.ini sudo find / -name odbcinst.ini (should be in usr/local/etc/) nano /usr/local/etc/odbcinst.ini 6. Add the following &amp; save [PostgreSQL Driver] Driver = /usr/local/lib/psqlodbcw." />
+<meta property="og:description" content="The objective of this post is to:
+Supplement and document the process of connecting to an SQL database from RStudio via ODBC.
+ Show how SQL queries can be executed directly from RStudio  The best resource to start Follow instructions at rstudio Connect to database.
+1. brew install freetds: &quot;--with-unixodbc has depreciated, not needed&quot; 2. brew install psqlodbc 3. brew install mysql 4. brew install sqliteodbc 5. Find odbcinst." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/connect-to-an-sql-database/" />
 <meta property="article:published_time" content="2019-01-20T00:00:00&#43;00:00"/>
@@ -69,13 +75,15 @@
         <meta property="og:image:height" content="512">
         
 <meta itemprop="name" content="Connect to an SQL Database from RStudio">
-<meta itemprop="description" content="The objective of this post is to document how to successfully connect to an SQL database from RStudioIDE user. Follow instructions at rstudio Connect to database.
-1. brew install freetds: &quot;--with-unixodbc has depreciated, not needed&quot; 2. brew install psqlodbc 3. brew install mysql 4. brew install sqliteodbc 5. Find odbcinst.ini sudo find / -name odbcinst.ini (should be in usr/local/etc/) nano /usr/local/etc/odbcinst.ini 6. Add the following &amp; save [PostgreSQL Driver] Driver = /usr/local/lib/psqlodbcw.">
+<meta itemprop="description" content="The objective of this post is to:
+Supplement and document the process of connecting to an SQL database from RStudio via ODBC.
+ Show how SQL queries can be executed directly from RStudio  The best resource to start Follow instructions at rstudio Connect to database.
+1. brew install freetds: &quot;--with-unixodbc has depreciated, not needed&quot; 2. brew install psqlodbc 3. brew install mysql 4. brew install sqliteodbc 5. Find odbcinst.">
 
 
 <meta itemprop="datePublished" content="2019-01-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="303">
+<meta itemprop="wordCount" content="439">
 
 
 
@@ -254,13 +262,76 @@
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="../../blog/r-for-paws/">R for “paws&#34;</a></h3>
+                                <h3><a href="../../blog/churn-analytics-shiny-app/">Churn Predictive Analytics ShinyMaterial App</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2019-04-23'>
+                                    April 23, 2019</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+        
+        
+        
+
+        <a href="../../blog/churn-analytics-shiny-app/" class="image featured">
+            <img src="../../img/2019/042019/04/churnapp.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="../../blog/r-for-paws/">R for &#34;Paws&#34;</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2019-03-20'>
                                     March 20, 2019</time>
                             </header>
                             
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="../../blog/r-for-paws/" class="image featured">
+            <img src="../../img//Prince1.png" alt="">
+        </a>
+    
+
 
                         </article>
                 
@@ -295,18 +366,6 @@
                                 <time class="published" datetime=
                                     '2018-03-05'>
                                     March 5, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2017-11-15'>
-                                    November 15, 2017</time>
                             </header>
                             
 
@@ -454,16 +513,22 @@
     
 
 
-<p>The objective of this post is to document how to successfully connect to an SQL database from RStudioIDE user. Follow instructions at <a href="https://db.rstudio.com/getting-started/connect-to-database/">rstudio Connect to database</a>.</p>
+<p>The objective of this post is to:</p>
+<ol style="list-style-type: decimal">
+<li>Supplement and document the process of connecting to an SQL database from RStudio via ODBC.<br />
+</li>
+<li>Show how SQL queries can be executed directly from RStudio</li>
+</ol>
+<p>The best resource to start Follow instructions at <a href="https://db.rstudio.com/getting-started/connect-to-database/">rstudio Connect to database</a>.</p>
 <pre class="r"><code>1. brew install freetds:  &quot;--with-unixodbc has depreciated, not needed&quot;
 2. brew install psqlodbc
 3. brew install mysql
 4. brew install sqliteodbc
 5. Find odbcinst.ini
-sudo find / -name odbcinst.ini (should be in usr/local/etc/)
-nano /usr/local/etc/odbcinst.ini
+   sudo find / -name odbcinst.ini (should be in usr/local/etc/)
+   nano /usr/local/etc/odbcinst.ini
 
-6. Add the following &amp; save
+6. Add the following &amp; save:
 
 [PostgreSQL Driver]
 Driver          = /usr/local/lib/psqlodbcw.so
@@ -475,9 +540,8 @@ Driver          = /usr/local/lib/libsqlite3odbc.dylib
 Driver          = /usr/local/lib/libtdsodbc.so
 
 7. Find odbc.ini
-sudo find / -name odbc.ini (should be in usr/local/etc/)
-
-nano /usr/local/etc/odbc.ini
+    sudo find / -name odbc.ini (should be in usr/local/etc/)
+    nano /usr/local/etc/odbc.ini
 
 8. Add the following &amp; save
 
@@ -495,63 +559,59 @@ Database=/tmp/testing
 
 [ODBC for FreeTDS]
 Driver              = ODBC for FreeTDS
-Database            = RPT_DWH
-Servername          = SQL-RPT.extensis.com
-UserName            = ro
-Password            = Extensis9
-Port                = 1433
-
-9. In R, run the console command to check if drivers are installed. . .
-odbcListDrivers()
-
-10. run the console command 
-install.packages(&quot;odbc&quot;)
-
-6. Add the following &amp; save
-
-[PostgreSQL Driver]
-Driver          = /usr/local/lib/psqlodbcw.so
-
-[SQLite Driver]
-Driver          = /usr/local/lib/libsqlite3odbc.dylib
-
-[ODBC for FreeTDS]
-Driver          = /usr/local/lib/libtdsodbc.so
-
-7. Find odbc.ini
-sudo find / -name odbc.ini (should be in usr/local/etc/)
-
-nano /usr/local/etc/odbc.ini
-
-8. Add the following &amp; save
-
-[PostgreSQL]
-Driver              = PostgreSQL Driver
-Database            = test_db
-Servername          = localhost
-UserName            = postgres
-Password            = password
-Port                = 5432
-
-[SQLite]
-Driver          = SQLite Driver
-Database=/tmp/testing
-
-[ODBC for FreeTDS]
-Driver              = ODBC for FreeTDS
-Database            = RPT_DWH
-Servername          = SQL-RPT.extensis.com
-UserName            = ro
-Password            = Extensis9
-Port                = 1433
+Database            = nameofthedatabase
+Servername          = nameofserver.com
+UserName            = username
+Password            = passwd
+Port                = Portnumber
 
 9. In R, run the console command to check if drivers are installed. . .
 odbcListDrivers()
 
 10. run the console command 
 install.packages(&quot;odbc&quot;)</code></pre>
-<p>Test it.</p>
-<p>Thanks to Mike Griffith, our IT ninja guy, who helped me through this process.</p>
+<p>Test it. Install the required libraries; details <span class="citation">@Yihui</span>’s book on rmarkdown: chapter <a href="https://bookdown.org/yihui/rmarkdown/language-engines.html">Other language engines</a>. First establish a connection to a database using <code>DBI::dbConnect() function</code>.</p>
+<pre class="r"><code>#Load required libraries
+library(odbc)
+library(DBI)
+library(tidyverse)
+
+#Define Connection
+myconnection &lt;- DBI::dbConnect(odbc::odbc(),
+                 driver = &quot;libtdsodbc.so&quot;,
+                 server = &quot;Server Name&quot;,
+                 database = &quot;Database name&quot;,
+                 UID = &quot;userid&quot;,
+                 Pwd = &quot;passwd&quot;,
+                 port = 1433)</code></pre>
+<p>The established/defined connection can be accessed via the Connections pane in Rstudio.</p>
+<div class="figure">
+<img src="../../img/2019/01/blankoutscreenshot.png" alt="connections_pane" />
+<p class="caption">connections_pane</p>
+</div>
+<p>Define an sql chunk and run SQL queries in R-markdown using: <strong>{sql, connection = myconnection, output.var = “nameoftheoutputfile”}</strong></p>
+<pre class="r"><code>SELECT *, 
+      convert(INT, DATENAME(YEAR, DATEADD(month, 6, First_Pur_Date))) FY_FirstPurchase,
+      convert(INT, DATENAME(YEAR, DATEADD(month, 6, MaxMED))) FY_EMaintD,
+      convert(INT, MONTH(First_Pur_Date)) Month_FirstPurch
+FROM &quot;databasename&quot;.&quot;tablename&quot;.&quot;dataset&quot;</code></pre>
+<p>Use SQL query similar to <code>case_when</code> in R</p>
+<pre class="r"><code>SELECT *, 
+case 
+    when Churn = &#39;No&#39; AND First_Purchase &gt; 1825 AND First_Purchase &lt; f.fpur then &#39;5+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &gt; 1460 AND First_Purchase &lt; 1824 then &#39;4+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &gt; 1095 AND First_Purchase &lt; 1459 then &#39;3+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &gt;730 AND First_Purchase &lt;1094 then &#39;2+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &gt;365 AND First_Purchase &lt;729 then &#39;1+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &lt;365 then &#39;New Active&#39;
+    else &#39;Inactive&#39; 
+    end segment
+
+FROM table.Prod_Churn c inner join (select SystemId, 
+                                    max(First_Pur_Date) fpur from table.Prod_Churn 
+                                    GROUP by SystemID) f on f.SystemID=c.SystemID
+WHERE Product = &#39;name_of_product&#39;</code></pre>
+<p>Thanks to <a href="https://www.linkedin.com/in/mikeegriffith/">Mike Griffith</a>, our IT ninja guy, and Greg Lee (SQL Ninja) who helped me through this process.</p>
 
   </div>
 
@@ -757,7 +817,48 @@ install.packages(&quot;odbc&quot;)</code></pre>
           <article class="mini-post">
             <header>
               <h3>
-                <a href="../../blog/r-for-paws/">R for “paws&#34;</a>
+                <a href="../../blog/churn-analytics-shiny-app/">Churn Predictive Analytics ShinyMaterial App</a>
+              </h3>
+              
+              <time class="published" datetime='2019-04-23'>
+                April 23, 2019
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+        
+        
+        
+
+        <a href="../../blog/churn-analytics-shiny-app/" class="image featured">
+            <img src="../../img/2019/042019/04/churnapp.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="../../blog/r-for-paws/">R for &#34;Paws&#34;</a>
               </h3>
               
               <time class="published" datetime='2019-03-20'>
@@ -765,6 +866,33 @@ install.packages(&quot;odbc&quot;)</code></pre>
               </time>
             </header>
             
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+        
+        
+        
+
+        <a href="../../blog/r-for-paws/" class="image featured">
+            <img src="../../img/2019/03/Prince1.png" alt="">
+        </a>
+    
+
 
           </article>
         
@@ -804,20 +932,6 @@ install.packages(&quot;odbc&quot;)</code></pre>
               
               <time class="published" datetime='2018-03-05'>
                 March 5, 2018
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="../../blog/from-powerpoint-to-shinydashboards-highcharter/">From Powerpoint to ShinyDashboards &amp; Highcharter</a>
-              </h3>
-              
-              <time class="published" datetime='2017-11-15'>
-                November 15, 2017
               </time>
             </header>
             
