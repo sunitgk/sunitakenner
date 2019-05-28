@@ -18,10 +18,13 @@ type: post
 
 
 
-<p>The objective of this post is to supplement and document the process of connecting to an SQL database from RStudio.</p>
+<p>The objective of this post is to:</p>
 <ol style="list-style-type: decimal">
-<li>Follow instructions at <a href="https://db.rstudio.com/getting-started/connect-to-database/">rstudio Connect to database</a>.</li>
+<li>Supplement and document the process of connecting to an SQL database from RStudio via ODBC.<br />
+</li>
+<li>Show how SQL queries can be executed directly from RStudio</li>
 </ol>
+<p>The best resource to start Follow instructions at <a href="https://db.rstudio.com/getting-started/connect-to-database/">rstudio Connect to database</a>.</p>
 <pre class="r"><code>1. brew install freetds:  &quot;--with-unixodbc has depreciated, not needed&quot;
 2. brew install psqlodbc
 3. brew install mysql
@@ -72,11 +75,11 @@ odbcListDrivers()
 
 10. run the console command 
 install.packages(&quot;odbc&quot;)</code></pre>
-<p>Test it.</p>
+<p>Test it. Install the required libraries; details <span class="citation">@Yihui</span>’s book on rmarkdown: chapter <a href="https://bookdown.org/yihui/rmarkdown/language-engines.html">Other language engines</a>. First establish a connection to a database using <code>DBI::dbConnect() function</code>.</p>
 <pre class="r"><code>#Load required libraries
 library(odbc)
 library(DBI)
-library(dplyr)
+library(tidyverse)
 
 #Define Connection
 myconnection &lt;- DBI::dbConnect(odbc::odbc(),
@@ -86,10 +89,31 @@ myconnection &lt;- DBI::dbConnect(odbc::odbc(),
                  UID = &quot;userid&quot;,
                  Pwd = &quot;passwd&quot;,
                  port = 1433)</code></pre>
+<p>The established/defined connection can be accessed via the Connections pane in Rstudio.</p>
+<div class="figure">
+<img src="/img/2019/01/blankoutscreenshot.png" alt="connections_pane" />
+<p class="caption">connections_pane</p>
+</div>
 <p>Define an sql chunk and run SQL queries in R-markdown using: <strong>{sql, connection = myconnection, output.var = “nameoftheoutputfile”}</strong></p>
 <pre class="r"><code>SELECT *, 
       convert(INT, DATENAME(YEAR, DATEADD(month, 6, First_Pur_Date))) FY_FirstPurchase,
       convert(INT, DATENAME(YEAR, DATEADD(month, 6, MaxMED))) FY_EMaintD,
       convert(INT, MONTH(First_Pur_Date)) Month_FirstPurch
 FROM &quot;databasename&quot;.&quot;tablename&quot;.&quot;dataset&quot;</code></pre>
-<p>Thanks to Mike Griffith, our IT ninja guy, who helped me through this process.</p>
+<p>Use SQL query similar to <code>case_when</code> in R</p>
+<pre class="r"><code>SELECT *, 
+case 
+    when Churn = &#39;No&#39; AND First_Purchase &gt; 1825 AND First_Purchase &lt; f.fpur then &#39;5+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &gt; 1460 AND First_Purchase &lt; 1824 then &#39;4+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &gt; 1095 AND First_Purchase &lt; 1459 then &#39;3+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &gt;730 AND First_Purchase &lt;1094 then &#39;2+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &gt;365 AND First_Purchase &lt;729 then &#39;1+ Years Active&#39;
+    when Churn = &#39;No&#39; AND First_Purchase &lt;365 then &#39;New Active&#39;
+    else &#39;Inactive&#39; 
+    end segment
+
+FROM table.Prod_Churn c inner join (select SystemId, 
+                                    max(First_Pur_Date) fpur from table.Prod_Churn 
+                                    GROUP by SystemID) f on f.SystemID=c.SystemID
+WHERE Product = &#39;name_of_product&#39;</code></pre>
+<p>Thanks to <a href="https://www.linkedin.com/in/mikeegriffith/">Mike Griffith</a>, our IT ninja guy, and Greg Lee (SQL Ninja) who helped me through this process.</p>
