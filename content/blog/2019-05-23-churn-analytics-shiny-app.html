@@ -1,5 +1,5 @@
 ---
-title: Churn Analytics ShinyMaterial App
+title: Churn Predictive Analytics ShinyMaterial App
 author: Sunita Kenner
 date: '2019-04-23'
 slug: churn-analytics-shiny-app
@@ -18,8 +18,16 @@ type: post
 
 
 
-<p>I had fun building the <a href="https://busaanalytics.shinyapps.io/Blog_ProductChurn_App1/">Churn Analytics shinymaterial application</a> by using <a href="https://ericrayanderson.github.io/shinymaterial/">Eric Andersen’s</a> shinymaterial package. This is a fantastic package(Thank you Eric) that enables shiny developers like me implement Material Design using R code; more about it <a href="https://rviews.rstudio.com/2018/03/13/alternative-design-for-shiny/">here</a>.</p>
-<p>The app is a final product of the Churn Analytics project at work (Also Please see: <a href="https://www.sgkenner.com/blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn 1</a>; code chunks as examples of actual UI and Server pieces of the app.</p>
+<p>The <a href="https://busaanalytics.shinyapps.io/Blog_ProductChurn_App1/">shinymaterial app</a> built using <a href="https://ericrayanderson.github.io/shinymaterial/">Eric Andersen’s</a> shinymaterial package is an example of one of the Predictive Churn Analytics projects at work. This is a fantastic package(Thank you Eric) that enables shiny developers like me implement Material Design using R code; more about it <a href="https://rviews.rstudio.com/2018/03/13/alternative-design-for-shiny/">here</a>.</p>
+<p>There are various online resources that detail solving binary classification problems such as Churn, but the one key resource that maximized my learning and application to a real-world product/s churn problem at work is <a href="https://university.business-science.io/p/hr201-using-machine-learning-h2o-lime-to-predict-employee-turnover">Matt Dancho’s 10-weeks ROI-Driven Advanced ML Data Science course DS4B 201-R</a>.<br />
+<img src="/img/2019/04/Matt_Dancho_BusSccourse.png" alt="Matt Dancho’s DS4B 201-R Advanced ML Course Overview" /></p>
+<p>As a sole analytics person that manages the entire data-science workflow, I need a high impact tool-box, given resource, budget and time constraints. Matt Dancho’s Advanced ML course course provides that tool-box (examples: H2o automl algorithms + LIME which provides 30+ models in minutes + explainability that drives business insights, skimr for EDA), and the agile Business Science Problem Framework that provides a roadmap for data science project success.</p>
+<div class="figure">
+<img src="/img/2019/04/churn_scoredash.png" alt="App Example of H2o + LIME = Speed+Power+Explainability" />
+<p class="caption">App Example of H2o + LIME = Speed+Power+Explainability</p>
+</div>
+<p>Building the Churn predictive analytics shinymaterial application was fun and I look forward to building more in future. Check out <a href="https://www.business-science.io/university/2019/05/16/course-launch-shiny-web-application-level-1.html">Matt Dancho’s shiny app course</a>.</p>
+<p>I’ve included code chunks as examples of actual UI/server pieces of the app.</p>
 <pre class="r"><code>#
 # UI Material Shiny app code for side_nav_tab_content
 #
@@ -109,3 +117,4 @@ type: post
           )
         )
       ),</code></pre>
+<p>More on: <a href="https://www.sgkenner.com/blog/predicting-customer-churn-part-1-eda-feature-engineering/">Predicting Customer Churn 1</a></p>
